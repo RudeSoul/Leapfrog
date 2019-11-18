@@ -1,0 +1,358 @@
+.header-wrp-whole {
+  /* background-color: black; */
+  /* width: 100%; */
+}
+.header1-logo {
+  float: left;
+}
+.header1-menu {
+  float: left;
+  margin-left: 205px;
+}
+.header1-menu ul {
+  list-style: none;
+}
+.header1-menu ul li {
+  float: left;
+}
+.header1-menu ul li a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 0 20px;
+  line-height: 71px;
+  color: #f8fbf4;
+}
+.header2-scale {
+  padding: 10px 0 0px; /*top rightleft botton */
+  background: url("../images/scale.png");
+  margin: 0 auto;
+}
+
+.header3-h2 {
+  color: #7f8585;
+  float: left;
+}
+.header3-right {
+  float: right;
+}
+.wholebodymain {
+  background-color: #f3f3f3;
+}
+
+.slidermain {
+  background: url("../images/slide.png");
+  margin: 0 auto;
+  padding: 702px 0 0;
+  position: relative;
+}
+.arrowleft {
+  background: url("../images/arrowleft.PNG");
+  background-repeat: no-repeat;
+}
+.arrowright {
+  background: url("../images/arrowright.PNG");
+  background-repeat: no-repeat;
+}
+.sliderdash {
+  background: url("../images/dash.png");
+  background-repeat: no-repeat;
+}
+.sliderdashred {
+  background: url("../images/dashred.png");
+  background-repeat: no-repeat;
+}
+.sliderdashthird {
+  background: url("../images/dash.png");
+  background-repeat: no-repeat;
+}
+
+/*this is sample for slider second*/
+.slidersecond {
+  width: 73.1875em;
+  padding-top: 100px;
+  margin: 0 auto;
+}
+.slidersecond ul {
+  list-style: none;
+}
+.slidersecondleft {
+  width: 75%;
+  float: left;
+}
+.slidersecondright {
+  width: 25%;
+}
+/*sample ends here*/
+
+/*ourteam starts*/
+.teamcard-hover {
+  z-index: 30;
+  position: absolute;
+  bottom: -20px;
+  /* padding-left: 35px; */
+  width: 14.641288433382138vw;
+  height: 54px;
+  margin: 0px 7.655555%;
+  background-image: url("../images/btn.png");
+  background-repeat: no-repeat;
+}
+.teamcard-hover1 {
+  z-index: 30;
+  position: absolute;
+  bottom: -20px;
+  /* padding-left: 35px; */
+  width: 14.641288vw;
+  height: 8.095952vh;
+  margin: 0px 7.655555%;
+  background-image: url("../images/redbtn.png");
+  background-repeat: no-repeat;
+}
+/* .teamcard-hover:hover {
+  background-image: url("../images/redbtn.png") no-repeat;
+} */
+.imagehere {
+  background-image: url("../images/card.png");
+  /* backgrosize: 100%; */
+}
+.username {
+  font-size: 19px;
+  position: absolute;
+  /* height: 10px; */
+  /* width: 20px; */
+  margin: 7.655555% 25%;
+  display: block;
+  color: #e9eef1;
+}
+
+.teamcard-back {
+  z-index: 20;
+  padding-left: 30px;
+  position: relative;
+  top: 20%;
+}
+
+.teamcard-wrp {
+  z-index: 10;
+  float: left;
+  padding-left: 30px;
+}
+
+/*ourteam ends*/
+
+/*onclick expand sarts here*/
+.expand {
+  width: 73.125em;
+  margin: 0 auto;
+  padding-top: 33%;
+}
+.expand ul {
+  list-style: none;
+}
+.expand ul li {
+  /* float: left; */
+}
+
+.expandsec {
+  width: 75%;
+  float: left;
+}
+.expandsid {
+  width: 25%;
+  float: right;
+}
+.clickonexpand {
+  color: #7b8584;
+  padding: 20px 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  background-image: url("../images/expand.png");
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+.clickonexpandcontent {
+  color: #7b8584;
+  padding: 20px 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  background-image: url("../images/expandtext.png");
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+
+.clickonexpand:hover {
+  color: black;
+}
+.clickonexpandcontent:hover {
+  color: black;
+}
+.expandsec p {
+  /* padding-left: 1.5666666%; */
+  line-height: 100%;
+  margin-top: 1.566666%;
+}
+/*onclick expand ends here*/
+
+/*tab title starts here*/
+.tabtitle {
+  width: 73.125em;
+  margin: 0 auto;
+  /* down:20px; */
+  padding-top: 20px;
+}
+.tabtitle ul {
+  list-style: none;
+}
+
+.tablinkwhite {
+  background-color: #555;
+  color: black;
+  background-image: url("../images/tabwhite.png");
+}
+
+.tablinkwhite:hover {
+  background-color: blanchedalmond;
+}
+
+.tablinkred {
+  background-color: #555;
+  color: white;
+  background-image: url("../images/tabred.png");
+}
+
+.tablinkred:hover {
+  background-color: blanchedalmond;
+}
+
+.tablinkgreen {
+  background-color: #555;
+  color: white;
+  display: block;
+  background-image: url("../images/tabgreen.png");
+}
+
+.tablinkgreen:hover {
+  background-color: blanchedalmond;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  display: inline-block;
+  background-image: url("../images/tabcontent.png");
+  background-repeat: no-repeat;
+}
+.tabcontent-r {
+  display: inline-block;
+  background-image: url("../images/tabcontent.png");
+  background-repeat: no-repeat;
+}
+/*tab title ends here*/
+
+.footer-bottom-wrapper,
+.footer-top-wrapper {
+  width: 73.125em;
+  margin: 0 auto;
+}
+
+.menu {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  div.menu ul li:not(:first-child) {
+    display: none;
+  }
+  .menu a {
+    float: right;
+    display: block;
+  }
+  div.slider {
+    display: none;
+  }
+  div.slidersecondleft {
+    float: left;
+    display: block;
+    size: cover;
+  }
+  div.slidersecondright {
+    display: none;
+  }
+  div.ourteam-main {
+    display: none;
+  }
+  .expand .expandsec {
+    display: none;
+  }
+  .expand .expandsid {
+    overflow: hidden;
+    display: block;
+    float: left;
+  }
+  div.tabtitle {
+    display: none;
+  }
+  .team-card-wrapper .team-card-wrapper-l {
+    display: block;
+  }
+  .team-card-wrapper-lm,
+  .team-card-wrapper-rm,
+  .team-card-wrapper-r {
+    display: none;
+  }
+  div.headline {
+    display: none;
+  }
+  .headlinetwo .headlinetwo-l {
+    display: block;
+    overflow: hidden;
+    float: left;
+  }
+  .headlinetwo-r {
+    dispaly: none;
+  }
+  .headlinethree {
+    display: none;
+  }
+  .headlinefour {
+    display: none;
+  }
+  .list .arrowlist {
+    display: block;
+    float: left;
+    overflow: hidden;
+  }
+
+  .crosslist,
+  .moveleftlist,
+  .ticklist {
+    display: none;
+  }
+  div.viewmoreheadline {
+    display: none;
+  }
+  div.tablemain {
+    display: none;
+  }
+  div.tablemainsecond {
+    display: none;
+  }
+
+  .info {
+    display: inline-block;
+  }
+  .comapny-menu,
+  .from-blog,
+  .blog {
+    display: none;
+  }
+  .footer-bottom {
+    display: inline-block;
+    overflow: hidden;
+  }
+}

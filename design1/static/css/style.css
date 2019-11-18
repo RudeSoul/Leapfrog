@@ -1,0 +1,16 @@
+.header-wrapper-whole {
+  background-color: #76c7c1;
+}
+
+.footer-bottom-wrapper,
+.footer-top-wrapper,
+.clients-wrapper,
+.our-team-container,
+.col3-left-whole,
+.company-info-wrapper,
+.arrowhead,
+.header-wrapper-buttom,
+.header-wrapper-top {
+  width: 73.125em;
+  margin: 0 auto;
+}
