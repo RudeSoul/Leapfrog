@@ -1,0 +1,11 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.clear:before, .clear:after {
+	content:"";
+	display:table;
+}
+.clear:after {
+    clear: both;
+}
