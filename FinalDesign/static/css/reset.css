@@ -1,6 +1,7 @@
 * {
   padding: 0px;
   margin: 0px;
+  /* outline: 1px dotted red; */
 }
 .clearfix:before,
 .clearfix:after {
@@ -27,4 +28,11 @@ figure {
 .container{
     width: 73.125em;
     margin:0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+.wrapper{
+    min-width:73.125em;
 }

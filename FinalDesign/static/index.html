@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+        <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <![endif]-->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/layout.css" />
@@ -15,7 +17,7 @@
     />
     <title>Design Final- ZOOM</title>
   </head>
-  <body>
+  <body class="wrapper">
     <header>
       <div class="header-wrapper clearfix">
         <!-- <div class="header-logo"> -->
@@ -26,7 +28,7 @@
         <div class="header-menu">
           <ul>
             <li><a href="#" class="activated">HOME</a></li>
-            <li class="dropdown"><a href="#">SERVICES</a></li>
+            <li ><a href="#" class="dropdown">SERVICES</a></li>
             <li><a href="#">PORTFOLIO</a></li>
             <li><a href="#">ABOUT</a></li>
             <li><a href="#">CONTACT</a></li>
@@ -125,14 +127,14 @@
           </p>
           <div></div>
           <div class="browseradd-b clearfix">
-            <figure class="imageleft clearfix">
-              <img src="images/smallbrowserleft.png" alt="browser" />
+            <figure class="imageleft">
+              <img src="images/side.png" alt="browser" />
             </figure>
-            <figure class="imagemiddle clearfix">
-              <img src="images/middlebrowser.png" alt="browser" />
+            <figure class="imagemiddle">
+              <img src="images/middle.png" alt="browser" />
             </figure>
-            <figure class="imageright clearfix">
-              <img src="images/smallbrowserright.png" alt="browser" />
+            <figure class="imageright">
+              <img src="images/side.png" alt="browser" />
             </figure>
           </div>
         </div>
@@ -166,20 +168,349 @@
             The Design That Likes To Say Yes.
           </h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore expedita explicabo rem voluptate earum libero facere repellendus exercitationem ab, perferendis iure beatae deleniti! Eum omnis ut dolores!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            expedita explicabo rem voluptate earum libero facere repellendus
+            exercitationem ab, perferendis iure beatae deleniti! Eum omnis ut
+            dolores!
           </p>
         </section>
         <section class="ourproduct-main">
-          <div class="ourproduct-main-menu ">
-          <ul>
-            <li><a>ALL</a></li>
-            <li><a>WEB</a></li>
-            <li><a>PHOTOGRAPHY</a></li>
-            <li><a>GRAPHIC DESIGN</a></li>
-          </ul>
+          <div class="ourproduct-main-menu clearfix">
+            <ul>
+              <li><a href="#" class="activated">ALL</a></li>
+              <li><a href="#">WEB</a></li>
+              <li><a href="#">PHOTOGRAPHY</a></li>
+              <li><a href="#">GRAPHIC DESIGN</a></li>
+            </ul>
+           </div>
+            <div class="ourproduct-cards clearfix">
+            <ul class="clearfix">
+              <li>
+                 <a href="#" >
+              <span class="ourproduct-cards-l clearfix">
+                <figure>
+                  <img src="images/card.png" alt="card" />
+                </figure>
+                <span class="card-content">
+                  <h3>WEB DESIGNE</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+              <li>
+                 <a href="#" >
+              <span class="ourproduct-cards-l">
+                <figure class="card-l">
+                  <img src="images/card.png" alt="card" />
+                </figure>
+                <span class="card-content">
+                  <h3>WEB DESIGNE</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+              <li>
+                 <a href="#" >
+              <span class="ourproduct-cards-l">
+                <figure class="card-l">
+                  <img src="images/card.png" alt="card" />
+                </figure>
+                <span class="card-content">
+                  <h3>WEB DESIGNE</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+              <li>
+                 <a href="#" >
+              <span class="ourproduct-cards-l">
+                <figure class="card-l">
+                  <img src="images/card.png" alt="card" />
+                </figure>
+                <span class="card-content">
+                  <h3>WEB DESIGNE</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+              <li>
+                 <a href="#" >
+              <span class="ourproduct-cards-l">
+                <figure class="card-l">
+                  <img src="images/card.png" alt="card" />
+                </figure>
+                <span class="card-content">
+                  <h3>WEB DESIGNE</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+              <li>
+                 <a href="#" >
+              <span class="ourproduct-cards-l">
+                <figure class="card-l">
+                  <img src="images/card.png" alt="card" />
+                </figure>
+                <span class="card-content">
+                  <h3>WEB DESIGNE</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+            </ul>
           </div>
+          <figure class="arrow"><a href="#">
+            <img src="images/arrow down.png" alt="go more" />
+          </a>
+          </figure>
         </section>
       </section>
     </section>
+    <section class="stats">
+      <section class="container">
+        <ul class="clearfix">
+          <li>
+            <a href="#"> <figure>
+              <img src="images/project.png" alt="project completed" />
+              </figure>
+              <span class="number">1234</span>
+              <p>COMPLETED PROJECT</p></a>
+          </li>
+          <li>
+            <a href="#"> <figure>
+              <img src="images/mouse.png" alt="project completed" />
+              </figure>
+              <span class="number">1234567</span>
+              <p>CLICK PRESSED</p></a>
+          </li>
+          <li>
+            <a href="#"> <figure>
+              <img src="images/mail.PNG" alt="project completed" />
+              </figure>
+              <span class="number">1234</span>
+              <p>MAIN SENT & RECEIVED</p></a>
+          </li>
+          <li>
+            <a href="#"> <figure>
+              <img src="images/chat.PNG" alt="project completed" />
+              </figure>
+              <span class="number">1234</span>
+              <p>JOKE TOLD</p></a>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section class="team">
+      <section class="container">
+         <section class="team-container">
+          <h2>
+            Behold The Power Of Team.
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            expedita explicabo rem voluptate earum libero facere repellendus
+            exercitationem ab, perferendis iure beatae deleniti! Eum omnis ut
+            dolores!
+          </p>
+        </section>
+         <div class="team-cards clearfix">
+            <ul class="clearfix">
+              <li>
+                 <a href="#" >
+              <span class="team-cards-l clearfix">
+                <figure>
+                  <img src="images/teamcard.png" alt="card" />
+                </figure>
+                <span class="teamcard-content">
+                  <h3>JOHN DOE</h3>
+                  <span class="team-post">Graphic Designer</span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+              <li>
+                 <a href="#" >
+              <span class="team-cards-l clearfix">
+                <figure>
+                  <img src="images/teamcard.png" alt="card" />
+                </figure>
+                <span class="teamcard-content">
+                  <h3>JOHN DOE</h3>
+                  <span class="team-post">Graphic Designer</span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+              <li>
+                 <a href="#" >
+              <span class="team-cards-l clearfix">
+                <figure>
+                  <img src="images/teamcard.png" alt="card" />
+                </figure>
+                <span class="teamcard-content">
+                  <h3>JOHN DOE</h3>
+                  <span class="team-post">Graphic Designer</span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+              <li>
+                 <a href="#" >
+              <span class="team-cards-l clearfix">
+                <figure>
+                  <img src="images/teamcard.png" alt="card" />
+                </figure>
+                <span class="teamcard-content">
+                  <h3>JOHN DOE</h3>
+                  <span class="team-post">Graphic Designer</span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum possimus aliquam cupiditate eum!
+                  </p>
+                </span>
+                </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </section>
+    </section>
+    <section class="quote">
+      <section class="container">
+        <section class="quote-main">
+          <figure class="quotefig">
+          <img src="images/comma.PNG" alt="quote" />
+          </figure>
+          <span class="saying">
+            We realize and actualize your vision
+          </span>
+          <span class="quote-name"><a href="#">John Doe CEO</a></span>
+        </section>
+        <section class="slide">
+          <ul class="clearfix">
+          <li> <a href="#"><img src="images/leftarrow.png" alt="slide left" /></a></li>
+         <li> <a href="#"><img src="images/arrowright.png" alt="slide right" /></a></li>
+        </ul>
+        </section>
+      </section>
+    </section>
+    <section class="newsletter">
+      <section class="container">
+        <h2>Want to hear more story, subscribe for our newsletter</h2>
+           <div class="newsletter-btn-wrapper"> <a class="newsletter-btn" href="#">Subscribe</a>
+            </div>
+          </section>
+    </section>
+    <section class="about">
+      <section class="container clearfix">
+        <figure class="about-img">
+          <img src="images/about-img.png" alt="BAbout Us" />
+        </figure>
+        <section class="about-info">
+          <h2>About Some Site</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste perferendis esse est commodi dolorum molestiae nihil labore! Veritatis mollitia sit recusandae natus rem inventore laborum, quas aliquid tenetur dolorem beatae.</p>
+        </section>
+      </section>
+    </section>
+    <section class="add">
+      <section class="container clearfix">
+        <figure class="add-img">
+          <img src="images/mobile-add.png" alt="Moden Design" />
+        </figure>
+        <section class="add-details">
+          <h2>MODERN DESIGN</h2>
+          <span>Responsive Design</span>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, soluta ducimus. Neque, quis voluptas quas quae perspiciatis obcaecati quibusdam, vero aliquid distinctio, veritatis eaque placeat quam saepe nihil delectus ipsam!</p>
+        </section>
+      </section>
+    </section>
+    <section class="clients">
+      <section class="container clearfix">
+        <section class="clients-body">
+          <h2>What clients say</h2>
+          <p>Lorem, ipsum dolor sit amet alias voluptas dmpouidem vero, voluptates laudantium explicabo repellendus sit dolorem, et consequatur debitis.</p>
+        </section>
+        <section class="clients-card">
+         <h2>Anya Stoen</h2>
+         <span>Graphic Designer</span>
+         <p>Lorem ipsum dolor quam tempore fugiat assumenda amet, aut facilis corporis harum dicta eius quos nemo voluptatibus id. Odio, culpa nulla. Quasi, possimus exercitationem.</p>
+        </section>
+        <section class="clients-card">
+         <h2>Anya Stoen</h2>
+         <span>Graphic Designer</span>
+         <p>Lorem ipsum dolor quam tempore fugiat assumenda amet, aut facilis corporis harum dicta eius quos nemo voluptatibus id. Odio, culpa nulla. Quasi, possimus exercitationem.</p>
+        </section>
+        <section class="clients-card">
+         <h2>Anya Stoen</h2>
+         <span>Graphic Designer</span>
+         <p>Lorem ipsum dolor quam tempore fugiat assumenda amet, aut facilis corporis harum dicta eius quos nemo voluptatibus id. Odio, culpa nulla. Quasi, possimus exercitationem.</p>
+        </section>
+      </section>
+    </section>
+    <section class="contact-us">
+     <section class="container">
+        <section class="contact-us-body">
+          <h2>Contact Us</h2>
+          <p>Lorem, ipsum dolor srepellendus sit doloremas voluptas dmpouidem vas voluptas dmpouidem vero, voluptatesero, voluptates, et consequatur debitis.</p>
+        </section>
+        <section class="contact-us-form clearfix">
+          <form action="#">
+           <input class="form-name" type="text" id="#" name="#" placeholder="Your name.." />
+           <input class="form-surname" type="text" id="#" name="#" placeholder="Your last name.." />
+            <textarea id="#" name="#" placeholder="Write something.." style="height:200px"></textarea>
+           <input class="contact-us-btn" type="submit" value="Send Message" />
+           </form>
+        </section>
+      </section>
+    </section>
+    <section class="map">
+      <section class="container clearfix">
+        <div class="map-content">
+          <span>Awesome Address 432</span>
+          <span>ourmail@sometype.com</span>
+          <span>+321(0)32 123 343 492</span>
+        </div>
+      </section>
+    </section>
+    <footer>
+         &copy; 2017 - <span class="company"><a href="#">Zoom</a></span> All Right Reserved
+    </footer>
+    
   </body>
 </html>
