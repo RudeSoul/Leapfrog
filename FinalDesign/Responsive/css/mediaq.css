@@ -1,70 +1,233 @@
-/* @media screen and (min-width: 22.5em) {
+@media screen and (min-width: 22.5em) {
   header .header-wrapper,
   section .hero .hero-wrapper {
     width: 22.5em;
     margin: 0 auto;
   }
 }
-@media screen and (min-width: 25.6875em) {
-  header .header-wrapper,
-  section .hero .hero-wrapper {
-    width: 25.6875em;
-    margin: 0 auto;
-  }
-}
-@media screen and (min-width: 20em) {
-  header .header-wrapper,
-  section .hero .hero-wrapper {
-    width: 20em;
-    margin: 0 auto;
-  }
-}
-@media screen and (min-width: 23.4375em) {
-  header .header-wrapper,
-  section .hero .hero-wrapper {
-    width: 23.4375em;
-    margin: 0 auto;
-  }
-}
+
 @media screen and (min-width: 48em) {
+  .wrapper {
+    min-width: 48em;
+  }
+  .container{
+    width: 48em;
+  }
+
   header .header-wrapper,
   section .hero .hero-wrapper {
     width: 48em;
     margin: 0 auto;
   }
-}
-@media screen and (min-width: 64em) {
-  header .header-wrapper,
-  section .hero .hero-wrapper {
-    width: 64em;
-    margin: 0 auto;
+  header .header-wrapper .header-logo {
+    width: 10px;
+    margin-bottom: 20px;
+    margin-left:20px;
   }
-}
-@media screen and (min-width: 80em) {
-  header .header-wrapper,
-  section .hero .hero-wrapper {
-    width: 80em;
-    margin: 0 auto;
+  header .header-wrapper .header-menu ul li a {
+    /* font-size: 10px; */
+    padding: 10px 15px;
+    display: block;
   }
-}
-@media screen and (min-width: 90em) {
-  header .header-wrapper,
   section .hero .hero-wrapper {
-    width: 90em;
-    margin: 0 auto;
-  }
+  width: 48em;
+  height: 450px;
 }
-@media screen and (min-width: 120em) {
-  header .header-wrapper,
-  section .hero .hero-wrapper {
-    width: 120em;
-    margin: 0 auto;
-  }
+section .hero .hero-wrapper .hero-title h2 {
+  font-size: 50px;
+  padding: 100px 90px 0px 140px;
 }
-@media screen and (min-width: 104.125em) {
-  header .header-wrapper,
-  section .hero .hero-wrapper {
-    width: 104.125em;
-    margin: 0 auto;
-  }
-} */
+section .hero-wrapper .hero-btn .hero-btn-btn {
+  padding: 24px 10px 24px 10px;
+  font-size: 16px;
+  margin: 53px 57px 250px 300px;
+ border-radius: 10px;
+}
+.services .services-wrapper {
+  width: 48em;
+}
+.services .services-wrapper .services-main .services-card-l, .services .services-wrapper .services-main .services-card-lr, .services .services-wrapper .services-main .services-card-rl, .services .services-wrapper .services-main .services-card-r   {
+  width: 22%;
+}
+.services-main figure img {
+  margin-left: 32px;
+}
+
+.services .services-wrapper .services-main .services-btn .services-btn-btn{
+   padding: 10px 30px 10px 30px;
+   margin: 50px 457px 50px 300px;
+}
+
+.browseradd {
+  width: 100%;
+  min-width: 48em;}
+  .browseradd .browseradd-wrapper {
+  width: 48em;
+  margin: 0 auto;
+}
+.browseradd .browseradd-wrapper .browseraddbody {
+  width: 37.8125em;
+  margin: 0 auto;
+}
+
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imageleft {
+  display:none;
+}
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imageright {
+  display: none;
+}
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imagemiddle {
+  display: none;
+}
+
+.mobile .mobile-wrapper {
+  width: 48em;
+}
+.mobile .mobile-wrapper .image-wrapper {
+  width:30%;
+  padding-left: 10px;
+  padding-top: 28px;
+}
+.mobile .mobile-wrapper .mobile-container {
+  width: 500px;
+  float:left;
+}
+.mobile .mobile-wrapper .mobile-container h2 {
+  color: #3f4244;
+  text-align: center;
+  font-size: 35pt;
+  font-weight: 500;
+}
+.mobile .mobile-wrapper .mobile-container p {
+  text-align: center;
+  font-size: 15pt;
+  font-weight: 300;
+}
+.mobile .mobile-wrapper .mobile-container .mobile-btn .mobile-btn-btn {
+  padding: 20px 34px 20px 34px;
+  margin-left: 10px;
+  margin-top: 71px;
+  margin-bottom: 50px;
+}
+.ourproduct {
+  min-width: 48em;
+  margin: 0 auto;
+}
+.ourproduct .container .ourproduct-container h2 {
+  padding-top: 48px;
+  margin-bottom: 37px;
+  font-size: 40px;
+ margin-left: 50px;
+}
+.ourproduct .container .ourproduct-main .ourproduct-main-menu ul {
+  margin-left: 80px;
+  margin-top: 50px;
+  padding-bottom: 44px;
+}
+.ourproduct .container .ourproduct-main .ourproduct-main-menu ul li a {
+  margin: 0 37px;
+}
+.ourproduct .container .ourproduct-main .ourproduct-cards ul li {
+  float: left;
+  width: 29.623931%;
+  margin-right: 29px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.ourproduct .container .arrow {
+  margin-left: 350px;
+}
+.stats {
+  min-width: 48em;
+}
+.stats .container ul li {
+  margin-right: 10px;
+}
+.stats .container ul li a .number {
+  font-size: 20pt;
+}
+.stats .container ul li a p {
+ font-size: 10pt;
+  padding-bottom: 87px;
+}
+.team .container .team-cards ul li {
+  margin-right: 10px;
+  margin-left:7px;
+  overflow: hidden;
+}
+.team .container .team-cards .teamcard-content h3 {
+  font-size: 15pt;
+}
+.team .container .team-cards .teamcard-content .team-post {
+  font-size: 13pt;
+  margin-left: 25px;
+}
+.team .container .team-cards .teamcard-content p {
+  font-size: 10pt;
+}
+.quote .container .slide ul li {
+  list-style: none;
+  float: left;
+  padding-left: 330px;
+  padding-right: 32px;
+}
+.newsletter .container .newsletter-btn {
+  margin: 53px 457px 53px 300px;
+ 
+}
+.about .container .about-img img{
+  display: none;
+}
+.about .container .about-info h2 {
+  text-align: center;
+  margin-top: 0px;
+}
+.about .container .about-info p {
+  text-align:center;
+  margin-bottom: 0px;
+}
+.clients .container .clients-card {
+ 
+  margin-right: 16px;
+   padding-top: 45px;
+  padding-bottom: 61px;
+  float: left;
+  overflow: hidden;
+}
+.contact-us .container {
+  padding-top: 30px;
+}
+.contact-us .container .contact-us-body h2 {
+  font-size: 35pt;
+  margin-bottom: 40px;
+}
+.contact-us .container .contact-us-form {
+  overflow: hidden;
+}
+.contact-us .container .contact-us-form .form-name {
+  width: 47.792207%;
+  height: 49px;
+  margin-right: 20.85px;
+}
+.contact-us .container .contact-us-form .form-surname {
+  width: 47.792207%;
+  height: 49px;
+  float: left;
+  margin-bottom: 87px;
+}
+.contact-us .container .contact-us-form textarea {
+  width: 99%;
+  height: 49px;
+  overflow: hidden;
+}
+.contact-us .container .contact-us-form .contact-us-btn {
+  /* margin-left: 77.922077%; */
+  margin-left: 600px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 27px;
+  padding: 19px 36px 17px 36px;
+  margin-bottom: 90px;
+  background-color: black;
+  color: white;
+}
+}
