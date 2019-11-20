@@ -1,11 +1,30 @@
-*{
-    padding: 0px;
-    margin: 0px;
+* {
+  padding: 0px;
+  margin: 0px;
 }
-.clear:before, .clear:after {
-	content:"";
-	display:table;
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
 }
-.clear:after {
-    clear: both;
+.clearfix:after {
+  clear: both;
+}
+header,
+img,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
+}
+/* * {
+  box-sizing: border-box;
+} */
+.container{
+    width: 73.125em;
+    margin:0 auto;
 }

@@ -1,13 +1,356 @@
-.loading{
-    margin:10% 10% 10% 45%;
+header {
+  background-color: white;
 }
-h1,h3{
-    margin-top:80px;
-   text-align: center;
-   color:blue;
+header .header-wrapper {
+  width: 73.125em;
+  margin: 0 auto;
 }
-a{
-   margin-left:45%;
- 
-    color:red;
+
+header .header-wrapper .header-logo {
+  float: left;
+  margin-bottom: 37px;
+  margin-top: 39px;
+  align-content: center;
+}
+header .header-wrapper .header-menu {
+  float: right;
+  margin-left: 20px;
+}
+header .header-wrapper .header-menu ul {
+  list-style: none;
+}
+header .header-wrapper .header-menu ul li {
+  float: left;
+  font-size: 14px;
+  list-style-type: none;
+}
+header .header-wrapper .header-menu ul li a {
+  border-radius: 10px;
+  text-decoration-line: none;
+  margin: 24px 10.5px 27px 10.5px;
+  padding: 18px 27px 18px 27px;
+  display: block;
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+header .header-wrapper .header-menu ul li a:hover {
+  background: linear-gradient(to right, #6dffc6, #3fd2ce);
+  color: white;
+}
+header .header-wrapper .header-menu ul li .activated {
+  background: linear-gradient(to right, #6dffc6, #3fd2ce);
+  color: white;
+}
+.header-wrapper .header-menu .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.header-wrapper .header-menu .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.header-wrapper .header-menu .dropdown:hover .dropdown-content {
+  background: linear-gradient(to right, #6dffc6, #3fd2ce);
+  display: block;
+}
+
+section .hero {
+  background: linear-gradient(to right, #6dffc6, #3fd2ce);
+}
+section .hero .hero-wrapper {
+  width: 73.125em;
+  margin: 0 auto;
+}
+
+section .hero .hero-wrapper .hero-title h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  padding: 271px 272px 0px 280px;
+}
+
+section .hero-wrapper .hero-btn .hero-btn-btn {
+  background: linear-gradient(to right, #ff6c54, #ff2b59);
+  color: white;
+  padding: 24px 50px 24px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 53px 457px 250px 464px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+section .hero-wrapper .hero-btn .hero-btn-btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.services {
+  background-color: white;
+}
+.services .services-wrapper {
+  width: 73.125em;
+  margin: 0 auto;
+}
+.services .services-wrapper .services-main {
+  margin-top: 86px;
+  float: left;
+}
+.services .services-wrapper .services-main .services-card-l {
+  width: 24%;
+  float: left;
+}
+.services .services-wrapper .services-main .services-card-l h3 {
+  margin-top: 27px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 15pt;
+  text-align: center;
+}
+.services .services-wrapper .services-main .services-card-l p {
+  /* margin-top:27px; */
+  font-family: "Roboto", sans-serif;
+  color: #929ba0;
+  font-size: 13pt;
+  text-align: center;
+  margin: 0 25px;
+  margin-top: 48px;
+}
+
+.services .services-wrapper .services-main .services-card-lr {
+  width: 24%;
+  float: left;
+}
+.services .services-wrapper .services-main .services-card-lr h3 {
+  margin-top: 27px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 15pt;
+  text-align: center;
+}
+.services .services-wrapper .services-main .services-card-lr p {
+  /* margin-top:27px; */
+  font-family: "Roboto", sans-serif;
+  color: #929ba0;
+  font-size: 13pt;
+  margin: 0 25px;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.services .services-wrapper .services-main .services-card-rl {
+  width: 24%;
+  float: left;
+}
+.services .services-wrapper .services-main .services-card-rl h3 {
+  margin-top: 27px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  font-size: 15pt;
+}
+.services .services-wrapper .services-main .services-card-rl p {
+  /* margin-top:27px; */
+  font-family: "Roboto", sans-serif;
+  color: #929ba0;
+  font-size: 13pt;
+  text-align: center;
+  margin: 0 25px;
+  margin-top: 48px;
+}
+
+.services .services-wrapper .services-main .services-card-r {
+  width: 23.076923%;
+  float: left;
+}
+.services .services-wrapper .services-main .services-card-r h3 {
+  margin-top: 27px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 15pt;
+  text-align: center;
+}
+.services .services-wrapper .services-main .services-card-r p {
+  /* margin-top:27px; */
+  font-family: "Roboto", sans-serif;
+  color: #929ba0;
+  font-size: 13pt;
+  text-align: center;
+  /* margin: 0 25px; */
+  padding-left: 17px;
+  margin-right: 30px;
+  padding-right: ;
+  margin-top: 48px;
+}
+
+.services-main figure img {
+  margin-left: 72px;
+}
+.services .services-wrapper .services-main .services-btn .services-btn-btn {
+  background: linear-gradient(to right, #ff6c54, #ff2b59);
+  color: white;
+  padding: 24px 50px 24px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 86px 457px 82px 464px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.browseradd {
+  background: linear-gradient(to right, #ff6c54, #ff2b59);
+}
+.browseradd .browseradd-wrapper {
+  width: 73.125em;
+  margin: 0 auto;
+}
+.browseradd .browseradd-wrapper .browseraddbody {
+  width: 47.8125em;
+  margin: 0 auto;
+}
+.browseradd .browseradd-wrapper .browseraddbody h2 {
+  text-align: center;
+  font-size: 30pt;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: white;
+  padding-top: 92px;
+}
+.browseradd .browseradd-wrapper .browseraddbody p {
+  text-align: center;
+  font-size: 10pt;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: white;
+  margin-top: 36px;
+}
+.browseradd-b {
+  width: 73.125em;
+  margin: 0 auto;
+  float: left;
+}
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imageleft {
+  width: 15.897435%;
+  padding: 330px 0 0 99px;
+  float: left;
+}
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imagemiddle {
+  width: 53.418803%;
+  padding: 200px 0 0 0;
+  float: left;
+}
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imageright {
+  width: 13.846153%;
+  padding-top: 330px;
+  padding-right: 99px;
+  bottom: -1%;
+  /* margin-left: 99px; */
+  float: left;
+}
+.mobile{
+    background: white;
+}
+.mobile .mobile-wrapper{
+    width:73.125em;
+    margin:0 auto;
+    /* float: left; */
+}
+
+.mobile .mobile-wrapper .image-wrapper{
+    /* width:50%; */
+    padding-left: 163px;
+    padding-bottom: 68px;
+    padding-top: 68px;
+    float: left;
+}
+.mobile .mobile-wrapper .mobile-container{
+    width: 585px;
+    float: right;
+}
+
+.mobile .mobile-wrapper .mobile-container h2{
+    color: #3f4244;
+     margin-top:147px;
+    padding-left: 117px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40pt;
+    font-weight: 400;
+    
+}
+.mobile .mobile-wrapper .mobile-container p{
+    color: #929ba0;
+    float:left;
+    padding-top :49px;
+    padding-left: 117px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt;
+    font-weight: 300;
+}
+
+.mobile .mobile-wrapper .mobile-container .mobile-btn .mobile-btn-btn {
+  background: linear-gradient(to right, #ff6c54, #ff2b59);
+  color: white;
+  padding: 20px 78px 34px 67px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  /* margin: 61px 318px 118px 113px; */
+  margin-left:113px;
+  margin-top: 61px;
+  margin-bottom: 118px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: inline-block;
+  /* float: left; */
+}
+
+.ourproduct{
+    background-color: #5bedc9;
+}
+.ourproduct .container .ourproduct-container h2{
+text-align: center;
+padding-top:88px;
+font-family: 'Roboto', sans-serif;
+font-weight: 400;
+color: white;
+margin-bottom: 37px;
+font-size: 40px;
+}
+
+.ourproduct .container .ourproduct-container p{
+text-align: center;
+font-family: 'Roboto', sans-serif;
+font-weight:300;
+color: white;
+}
+.ourproduct .container .ourproduct-main .ourproduct-main-menu{
+    width:558px;
+    margin: 0 auto;
+}
+
+.ourproduct .container .ourproduct-main .ourproduct-main-menu ul{
+list-style: none;
+}
+.ourproduct .container .ourproduct-main .ourproduct-main-menu ul li{
+text-decoration: none;
+float: left;
+margin:0 37px;
+}
+.ourproduct .container .ourproduct-main .ourproduct-main-menu ul li a{
+font-family: "Roboto", sans-serif;
+
 }
