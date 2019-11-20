@@ -1,10 +1,211 @@
 @media screen and (min-width: 22.5em) {
+.wrapper {
+    min-width: 22.5em;
+  }
+  .container{
+    width: 22.5em;
+  }
+
   header .header-wrapper,
   section .hero .hero-wrapper {
     width: 22.5em;
     margin: 0 auto;
   }
+  header .header-wrapper .header-logo {
+    width: 5px;
+    margin-bottom: 0px;
+    margin-left:0px;
+  }
+  header .header-wrapper .header-menu ul li a {
+    font-size: 10px;
+    padding: 3px 3px;
+    display: block;
+  }
+  section .hero .hero-wrapper {
+  width: 22.5em;
+  height: 350px;
 }
+section .hero .hero-wrapper .hero-title h2 {
+  font-size: 30px;
+  padding: 50px 10px 0px 10px;
+}
+section .hero-wrapper .hero-btn .hero-btn-btn {
+  padding: 24px 10px 24px 10px;
+  font-size: 16px;
+  margin: 50px 0px 50px 100px;
+ border-radius: 15px;
+}
+.services .services-wrapper {
+  width: 22.5em;
+}
+.services .services-wrapper .services-main .services-card-l, .services .services-wrapper .services-main .services-card-lr, .services .services-wrapper .services-main .services-card-rl, .services .services-wrapper .services-main .services-card-r   {
+  width: 25%;
+  overflow: hidden;
+}
+.services-main figure img {
+  margin-left: 32px;
+}
+
+.services .services-wrapper .services-main .services-btn .services-btn-btn{
+   padding: 10px 30px 10px 30px;
+   margin: 50px 457px 50px 100px;
+}
+
+.browseradd {
+  width: 100%;
+  min-width: 22.5em;}
+  .browseradd .browseradd-wrapper {
+  width: 22.5em;
+  margin: 0 auto;
+}
+.browseradd .browseradd-wrapper .browseraddbody {
+  width: 17.8125em;
+  margin: 0 auto;
+}
+
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imageleft {
+  display:none;
+}
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imageright {
+  display: none;
+}
+.browseradd .browseradd-wrapper .browseraddbody .browseradd-b .imagemiddle {
+  display: none;
+}
+
+.mobile .mobile-wrapper {
+  width: 25.5em;
+}
+.mobile .mobile-wrapper .image-wrapper {
+  width:50%;
+  padding-left: 20px;
+  padding-top: 40px;
+}
+.mobile .mobile-wrapper .mobile-container {
+  width: 190px;
+  float:left;
+}
+.mobile .mobile-wrapper .mobile-container h2 {
+  color: #3f4244;
+  text-align: center;
+  font-size: 20pt;
+  font-weight: 500;
+  width: 100%;
+}
+.mobile .mobile-wrapper .mobile-container p {
+  text-align: center;
+  font-size: 10pt;
+  font-weight: 300;
+  width: 100%;
+}
+.mobile .mobile-wrapper .mobile-container .mobile-btn .mobile-btn-btn {
+  padding: 10px 20px 10px 20px;
+  margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.ourproduct {
+  min-width: 22.5em;
+  margin: 0 auto;
+}
+.ourproduct .container .ourproduct-container h2 {
+  padding-top: 20px;
+  margin-bottom: 37px;
+  font-size: 30px;
+ margin-left: 10px;
+ overflow: hidden;
+}
+.ourproduct .container .ourproduct-main .ourproduct-main-menu ul {
+  margin-left: 10px;
+  margin-top: 20px;
+  padding-bottom:20px;
+}
+.ourproduct .container .ourproduct-main .ourproduct-main-menu ul li a {
+  margin: 0 5px;
+}
+.ourproduct .container .ourproduct-main .ourproduct-cards ul li {
+  float: left;
+  text-align: center;
+  width: 29.623931%;
+  margin-right: 19px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.ourproduct .container .arrow {
+  margin-left: 180px;
+}
+.stats {
+  min-width: 22.5em;
+}
+.stats .container ul li {
+  margin-right: 7px;
+}
+.stats .container ul li a .number {
+  font-size: 10pt;
+}
+.stats .container ul li a p {
+ font-size: 7pt;
+  padding-bottom: 87px;
+}
+.team .container .team-cards ul li {
+  margin-right: 3px;
+  margin-left:3px;
+  overflow: hidden;
+}
+.team .container .team-cards .teamcard-content h3 {
+  font-size: 15pt;
+}
+.team .container .team-cards .teamcard-content .team-post {
+  font-size: 13pt;
+  margin-left: 25px;
+}
+.team .container .team-cards .teamcard-content p {
+  font-size: 10pt;
+}
+.quote .container .slide ul li {
+  list-style: none;
+  float: left;
+  padding-left: 130px;
+  padding-right: 32px;
+}
+.newsletter .container .newsletter-btn {
+  margin: 53px 457px 53px 100px;
+ 
+}
+.about .container .about-img img{
+  display: none;
+}
+.about .container .about-info h2 {
+  text-align: center;
+  margin-top: 0px;
+}
+.about .container .about-info p {
+  text-align:center;
+  margin-bottom: 0px;
+}
+.clients .container .clients-card {
+ 
+display: none;
+}
+.contact-us .container {
+  padding-top: 30px;
+}
+.contact-us .container .contact-us-body h2 {
+  display: none;
+}
+.contact-us, .map, .add  {
+  display: none;
+}
+.clients .container .clients-body h2 {
+  display: none;
+}
+
+.clients .container .clients-body p {
+  display: none;
+}
+}
+
+
 
 @media screen and (min-width: 48em) {
   .wrapper {
