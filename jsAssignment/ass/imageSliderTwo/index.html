@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>imageSlider</title>
+  </head>
+  <body>
+
+    <h1>Image Slider <sub>with hold and nav dots</sub> </h1>
+    <div class="carousel-container clearfix" id="main">
+      <i class="fa fa-arrow-left" id="prevBtn"></i>
+      <i class="fa fa-arrow-right" id="nextBtn"></i>
+      <div class="carousel-image-wrapper " id="slider">
+        <img src="assets/images/1.jpg" alt="" />
+        <img src="assets/images/2.jpg" alt="" />
+        <img src="assets/images/3.jpg" alt="" />
+        <img src="assets/images/4.jpg" alt="" />
+        <img src="assets/images/5.jpg" alt="" />
+        <img src="assets/images/6.jpg" alt="" />
+        <img src="assets/images/7.jpg" alt="" />
+      </div>
+        <div class="navigationDot" id="navigationDot">
+          <span id="dot" onclick="valueOfDots(0)" class="dot"></span>
+          <span id="dot" onclick="valueOfDots(1)" class="dot"></span>
+          <span id="dot" onclick="valueOfDots(2)" class="dot"></span>
+          <span id="dot" onclick="valueOfDots(3)" class="dot"></span>
+          <span id="dot" onclick="valueOfDots(4)" class="dot"></span>
+          <span id="dot" onclick="valueOfDots(5)" class="dot"></span>
+          <span id="dot" onclick="valueOfDots(6)" class="dot"></span>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
