@@ -1,0 +1,8 @@
+   .ant {
+      background: red;
+      position: absolute;
+    }
+
+    .score{
+        font-size: 30px;
+    }
