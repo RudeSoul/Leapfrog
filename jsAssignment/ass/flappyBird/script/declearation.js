@@ -24,6 +24,6 @@ var PIPE_WIDTH = 52;
 var PIPE_HEIGHT = 320;
 
 var OBSTACLES = [
-    './assets/sprites/pipe-green.png',
-    './assets/sprites/pipe-red.png',
+    './assets/images/pipe-green.png',
+    './assets/images/pipe-red.png',
 ];

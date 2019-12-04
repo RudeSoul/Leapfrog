@@ -34,7 +34,7 @@ function GameAnimation(fps, parentElement) {
         birdCollision = false;
 
 
-        parentElement.style.backgroundImage = 'url("./assets/sprites/background-day.png")';
+        parentElement.style.backgroundImage = 'url("./assets/images/background-day.png")';
 
         obstacleImage = OBSTACLES[getRandom(0, 1)];
 

@@ -1,18 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function Game() {
 
     var parentElement = document.getElementById('containerBackground');

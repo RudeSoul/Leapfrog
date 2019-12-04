@@ -8,6 +8,5 @@ function DisplayScoreAndInfo(highScore, score) {
 function setHighScoreIfHighest(highScore, userScore) {
     if (userScore > highScore) {
         localStorage.setItem("highScore", userScore);
-        document.getElementById("message").innerHTML = 'Congratulations You have Got High Score';
     }
 }

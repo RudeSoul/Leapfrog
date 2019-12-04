@@ -10,7 +10,7 @@ function BIRD(parentElement) {
 
     this.init = function () {
         this.birdElement = document.createElement('div');
-        this.birdElement.style.backgroundImage = 'url("./assets/sprites/yellowbird.gif")';
+        this.birdElement.style.backgroundImage = 'url("./assets/images/yellowbird.gif")';
         this.birdElement.style.backgroundRepeat = 'no-repeat';
         this.birdElement.style.backgroundPosition = 'center';
         this.birdElement.style.backgroundSize = '100% 100%';
