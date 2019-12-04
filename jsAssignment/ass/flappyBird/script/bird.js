@@ -7,6 +7,7 @@ function BIRD(parentElement) {
     this.gravity = GRAVITY;
     this.speedLimit = BIRD_SPEED_LIMIT;
     this.birdElement = null;
+    this.angle = 0;
 
     this.init = function () {
         this.birdElement = document.createElement('div');

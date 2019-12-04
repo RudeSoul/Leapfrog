@@ -192,7 +192,23 @@ function GameAnimation(fps, parentElement) {
         //Move the bird
         bird.y += bird.vy;
 
-
+        // rotation of bird
+        if (ty > bird.y) {
+            // as if bird is moving is downward angle is higher so set angle to 0 when moving down
+            if (bird.angle > 0) {
+                bird.angle = 0;
+            }
+            // dont go higher than 17 degree angles
+            if (!(bird.angle < -17)) {
+                bird.angle -= 100 * Math.PI / 180;
+            }
+        }
+        else {
+            //dont go lower than 90 degree when falling
+            if (!(bird.angle > 90)) {
+                bird.angle += 100 * Math.PI / 180;
+            }
+        }
 
         bird.draw();
     };
