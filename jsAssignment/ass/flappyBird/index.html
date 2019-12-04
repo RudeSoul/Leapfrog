@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="./css/style.css" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Flappy Bird</title>
-  </head>
-  <body>
-    <h3>flappyBird</h3>
-    <div id="wrapper" class="wrapper">
-      <canvas id="canvas" width="288" height="512"></canvas>
-      <!-- <canvas id="canvas" width="288" height="512"></canvas> -->
+</head>
+
+<body>
+
+    <div class="info" id="info">
+        <h2>High Score: <span id="highScore"></span></h2>
+        <div>Score:<span id="score"></span></div>
+        <div id="message"></div>
+        <div class="instruction">Use Mouse Click or Any Key To Play</div>
     </div>
-    <script src="./js/declearation.js"></script>
-    <script src="./js/images.js"></script>
-    <script src="./js/audio.js"></script>
-    <script src="./js/move.js"></script>
-    <script src="./js/pipe.js"></script>
-    <script src="./js/draw.js"></script>
-  </body>
+
+    <div class="container-backgroound" id="containerBackground">
+        <div class="container-road" id="containerRoad">
+            <div class="game-restart-play" id="game-restart-play">
+            </div>
+        </div>
+    </div>
+    <script src="script/declearation.js"></script>
+    <script src="script/containerStyle.js"></script>
+    <script src="script/random.js"></script>
+    <script src="script/score.js"></script>
+    <script src="script/bird.js"></script>
+    <script src="script/pipe.js"></script>
+    <script src="script/gameAnimation.js"></script>
+    <script src="script/startGame.js"></script>
+</body>
+
 </html>

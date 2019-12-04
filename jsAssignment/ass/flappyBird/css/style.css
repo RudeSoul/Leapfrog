@@ -1,9 +1,5 @@
-.wrapper {
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  background-image: url("../images/welcomeMsg.png");
-  background-size: justify;
-  background-repeat: no-repeat;
- 
+html,
+body {
+    height: 100%;
+    width: 100%;
 }
