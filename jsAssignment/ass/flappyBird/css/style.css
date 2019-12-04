@@ -3,3 +3,14 @@ body {
     height: 100%;
     width: 100%;
 }
+h2{
+    color:red;
+    text-align:center;
+}
+.score{
+    color:blue;
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-left:100px
+}
