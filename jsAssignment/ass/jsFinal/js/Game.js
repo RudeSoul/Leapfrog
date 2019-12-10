@@ -337,7 +337,7 @@ class Game {
     }
 
     start() {
-        //load all the images before the game starts
+        //all images are initilized when started
         let preLoader = new PreLoader();
         preLoader.load(() => {
             setInterval(this.gameLoop, 40);
