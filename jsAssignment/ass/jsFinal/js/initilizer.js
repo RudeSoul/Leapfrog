@@ -1,5 +1,5 @@
 //loads all the images before the game starts
-class PreLoader {
+class initilizer {
 
     constructor() {
         this.totalImages = GAME_IMAGES.length;
