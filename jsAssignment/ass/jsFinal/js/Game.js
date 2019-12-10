@@ -338,8 +338,8 @@ class Game {
 
     start() {
         //all images are initilized when started
-        let preLoader = new PreLoader();
-        preLoader.load(() => {
+        let initilizer = new initilizer();
+        initilizer.load(() => {
             setInterval(this.gameLoop, 40);
             CAR_START.play();
         });
