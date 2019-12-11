@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@font-face {
+    font-family: NeuroPol;
+    src: url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+}
+
+#main-canvas {
+    background: #000;
+    display: block;
+    background-color: black;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background: url('../images/menu.jpg') center center no-repeat;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+}
+
+.logo {
+    background: url('../images/logo.png');
+    width: 20.02083333%;
+    height: 25.07522568%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 40.27083333%;
+    margin-top: 8.04513541%;
+}
+
+.play-game {
+    background: url('../images/playGame.png');
+    width: 20.41666667%;
+    height: 17.0661986%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 40.35416667%;
+    margin-top: 10.04513541%;
+}
+
+.play-game:hover {
+    box-shadow: 0px 0px 58px rgba(0, 0, 0, 0.5), 0px 6px 10px rgba(0, 0, 0, 0.44);
+    border-radius: 10px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
