@@ -1,3 +1,8 @@
+/**
+ *
+ *
+ * @class Game
+ */
 class Game {
 
     constructor() {
@@ -50,37 +55,70 @@ class Game {
 
     }
 
-    //gradually increases the curvature from 0 to the target
+    /**
+     *
+     *
+     * @param {*} length
+     * @param {*} curvature
+     * @memberof Game
+     */
     enterSector(length, curvature) {
         for (let n = 0; n < length; n++)
             this.road.initializeSegments(getEnterCurvature(n, curvature, length));
     }
 
-    //gradually decreases curvature from target to 0
+    
+    /**
+     *
+     *
+     * @param {*} length
+     * @param {*} curvature
+     * @memberof Game
+     */
     exitSector(length, curvature) {
         for (let n = 0; n < length; n++)
             this.road.initializeSegments(getExitCurvature(curvature, n, length));
     }
 
+    /**
+     *
+     *
+     * @param {*} length
+     * @param {*} curvature
+     * @memberof Game
+     */
     addRoad(length, curvature) {
-        //sector are a potions of road. may be straight or curved
-        //each sector is constructed using segments
-
-        //enter the segments
+        //segment started
         this.enterSector(length, curvature);
 
         //exit the segments
         this.exitSector(length, curvature);
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     drawRoad() {
         this.road.drawRoad(this.ctx, this.position, this.player.playerX, this.enemies);
     }
 
+    /**
+     *
+     *
+     * @param {*} currentCurve
+     * @memberof Game
+     */
     updateBackground(currentCurve) {
         this.backgroundImageStart -= currentCurve / BACKGROUND_MOVEMENT_FACTOR;
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     updatePlayerAsPerCurve() {
         //player is pushed out of the track to simulate the effect of a curve
         let currentCurveIndex = this.road.findSegmentIndex(this.position);
@@ -92,6 +130,11 @@ class Game {
         }
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     updateNitro() {
         if ((this.road.findSegmentIndex(this.position) - this.currentSegment >= DIFFERENCE_TO_INCREASE_NITRO) && !this.isSpacePressed) {
             this.player.increaseNitro();
@@ -100,6 +143,11 @@ class Game {
         }
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     updatePlayerXPos() {
         //we only update the x position only if car has certain speed   
         if (this.player.speed > 0) {
@@ -108,6 +156,12 @@ class Game {
         }
     }
 
+    /**
+     *
+     *
+     * @returns
+     * @memberof Game
+     */
     checkIfGameEnded() {
         return (this.road.findSegmentIndex(this.position) > TOTAL_LENGTH_OF_ROAD);
     }
@@ -122,6 +176,11 @@ class Game {
         );
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     checkAndHandleGameEnd() {
         if (this.isGameOver) this.showGameOver();
         if (this.checkIfGameEnded() && !this.isGameOver) {
@@ -137,6 +196,11 @@ class Game {
         }
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     updateEnemies() {
         if (!this.isInitialCountDownOngoing) {
             this.enemies.map(enemy => {
@@ -147,11 +211,21 @@ class Game {
         }
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     calculatePlayerRank() {
         this.player.calculateCurrentPosition(this.position, this.enemies, this.isGameOver);
 
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     update() {
         this.updateNitro();
 
@@ -171,10 +245,20 @@ class Game {
         this.checkAndHandleGameEnd();
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     drawBackground() {
         drawImage(this.ctx, 'images/b.png', this.backgroundImageStart, 0, ROAD_PARAM.CANVAS_WIDTH * 5, 549 * HEIGHT_MULTIPLIER + 549);
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     drawPlayer() {
         this.player.draw(
             this.ctx,
@@ -186,6 +270,11 @@ class Game {
         );
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     playSounds() {
         if (this.isUpPressed) CAR_ACCELERATE.play();
 
@@ -199,6 +288,11 @@ class Game {
             CAR_SKID.play();
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     drawDashBoard() {
         this.dashBoard.drawSteering(this.ctx, this.isLeftPressed, this.isRightPressed);
         this.dashBoard.drawSpeedometer(this.ctx, this.player.speed, MAX_SPEED);
@@ -206,20 +300,40 @@ class Game {
         this.dashBoard.drawNitroMeter(this.ctx, MAX_NITRO, this.player.nitro);
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     drawRank() {
         this.dashBoard.drawRankInfo(this.ctx, this.player.rank, this.player.aheadEnemyName, this.player.behindEnemyName);
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     addEventListeners() {
         document.addEventListener('keydown', this.keyDownHandler, false);
         document.addEventListener('keyup', this.keyUpHandler, false);
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     removeEventListeners() {
         document.removeEventListener('keydown', this.keyDownHandler, false);
         document.removeEventListener('keyup', this.keyUpHandler, false);
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     showInitialCountDown() {
         if (this.isInitialCountDownOngoing)
             writeText(
@@ -247,6 +361,11 @@ class Game {
         }
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     draw() {
         this.drawBackground();
         this.drawRoad();
@@ -255,19 +374,39 @@ class Game {
         this.drawRank();
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     checkAndHandleEnemyCollision() {
         this.player.checkAndHandleEnemyCollision(this.position, this.enemies);
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     checkAndHandleTreeCollision() {
         this.player.checkAndHandleTreeCollision(this.road.segments, this.road.findSegmentIndex(this.position));
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     checkAndHandleCollision() {
         this.checkAndHandleEnemyCollision();
         this.checkAndHandleTreeCollision();
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     gameLoop() {
         //  CLEARING THE SCREEN BEFORE EACH UPDATE
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -282,6 +421,12 @@ class Game {
         // requestAnimationFrame(this.gameLoop);
     }
 
+    /**
+     *
+     *
+     * @param {*} e
+     * @memberof Game
+     */
     keyDownHandler(e) {
 
         switch (e.keyCode) {
@@ -309,6 +454,12 @@ class Game {
         }
     }
 
+    /**
+     *
+     *
+     * @param {*} e
+     * @memberof Game
+     */
     keyUpHandler(e) {
 
         switch (e.keyCode) {
@@ -336,6 +487,11 @@ class Game {
         }
     }
 
+    /**
+     *
+     *
+     * @memberof Game
+     */
     start() {
         //load all the images before the game starts
         let preLoader = new PreLoader();
