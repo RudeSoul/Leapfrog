@@ -49,6 +49,17 @@ const CAR_DECELERATE = createSoundObject('sounds/car+geardown.mp3');
 const CAR_SKID = createSoundObject('sounds/skid.wav');
 const CAR_START = createSoundObject('sounds/carstartgarage.mp3');
 
+const PLAYER_NAME = [
+    'PRABESH',
+    'PRAJWAL',
+    'SWEKSHYA',
+    'PRABIN',
+    'JANISH',
+    'NIRMAL',
+    'NIRAJ',
+    'SULAV',
+    'VAXO',
+];
 
 class Game {
 
@@ -68,8 +79,15 @@ class Game {
         racingTrack.map(sector => {
             this.addRoad(sector.number / 2, sector.curvature);
         });
+
+        
         this.player = new Player();
         this.dashBoard = new DashBoard();
+        this.enemies = [];
+
+        for (let x = 0; x < NO_OF_ENEMIES; x++)
+            this.enemies.push(new Enemies((x + 1) / 2.5 * 500, x, (x + 1) / 2.5 * 10000, PLAYER_NAME[x] || ('PLAYER' + x)));
+
 
         this.carSprite = CAR_CENTRE;
 
@@ -139,7 +157,11 @@ class Game {
         this.dashBoard.drawSteering(this.ctx, this.isLeftPressed, this.isRightPressed);
         this.dashBoard.drawSpeedometer(this.ctx);
         this.dashBoard.drawProgressBar(this.ctx);
-         }
+    }
+    
+    drawRank() {
+        this.dashBoard.drawRankInfo(this.ctx);
+    }
 
 
 
@@ -148,6 +170,7 @@ class Game {
         this.drawRoad();
         this.drawPlayer();
         this.drawDashBoard();
+        this.drawRank();
     }
 
 

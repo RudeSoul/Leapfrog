@@ -48,14 +48,13 @@ class DashBoard {
             'white'
         )
     }
-    drawRankInfo(ctx, rank, aheadEnemyName, behindEnemyName) {
-        const fontSize = 30 * HEIGHT_MULTIPLIER + 30;
+    drawRankInfo(ctx) {
         writeText(
             ctx,
             ROAD_PARAM.CANVAS_WIDTH / 2 + 50 * HEIGHT_MULTIPLIER + 50,
             950 * HEIGHT_MULTIPLIER + 950,
-            rank,
-            `700 ${fontSize}px  Neuropol`,
+
+
             'white'
         );
 
@@ -63,8 +62,7 @@ class DashBoard {
             ctx,
             ROAD_PARAM.CANVAS_WIDTH / 2 - (170 * HEIGHT_MULTIPLIER + 170),
             820 * HEIGHT_MULTIPLIER + 820,
-            aheadEnemyName,
-            `700 ${fontSize}px  Neuropol`,
+
             'white'
         );
 
@@ -72,8 +70,7 @@ class DashBoard {
             ctx,
             ROAD_PARAM.CANVAS_WIDTH / 2 + 260 * HEIGHT_MULTIPLIER + 260,
             940 * HEIGHT_MULTIPLIER + 940,
-            behindEnemyName,
-            `700 ${fontSize}px  Neuropol`,
+
             'white'
         );
     }
@@ -88,14 +85,14 @@ class DashBoard {
             50 * HEIGHT_MULTIPLIER + 50,
             'rgba(0, 0, 0, 0.6)'
         );
-        
+
         drawImage(
             ctx,
             'images/finish2.png',
             1300 * WIDTH_MULTIPLIER + 1300,
             ROAD_PARAM.CANVAS_HEIGHT - (150 * HEIGHT_MULTIPLIER + 150),
             50 * WIDTH_MULTIPLIER + 50,
-            50*HEIGHT_MULTIPLIER+50
+            50 * HEIGHT_MULTIPLIER + 50
         );
 
 
