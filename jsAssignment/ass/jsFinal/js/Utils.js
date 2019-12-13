@@ -14,6 +14,30 @@ const drawImage = (ctx, src, x, y, width, height, shadowColor) => {
 
     ctx.drawImage(img, x, y, width, height);
 }
+const drawRect = (ctx, xPos, yPos, width, height, color, shadowBlur) => {
+    ctx.beginPath();
+    ctx.fillStyle = color;
+
+    if (shadowBlur) {
+        ctx.shadowColor = shadowBlur;
+        ctx.shadowBlur = 20;
+    }
+
+    ctx.rect(xPos, yPos, width, height);
+    ctx.fill();
+    ctx.closePath();
+    ctx.shadowBlur = 0;
+}
+const writeText = (ctx, x, y, text, font, color) => {
+    ctx.font = font;
+    ctx.textAlign = 'center';
+    ctx.fillStyle = color;
+    ctx.shadowColor = 'black';
+    ctx.shadowBlur = 40;
+    ctx.fillText(text, x, y);
+
+    ctx.shadowBlur = 0;
+}
 
 const getEnterCurvature = (currentSegment, goal, length) => {
     let percent = goal / length;

@@ -69,6 +69,7 @@ class Game {
             this.addRoad(sector.number / 2, sector.curvature);
         });
         this.player = new Player();
+        this.dashBoard = new DashBoard();
 
         this.carSprite = CAR_CENTRE;
 
@@ -134,6 +135,11 @@ class Game {
             CAR_SKID.play();
     }
 
+    drawDashBoard() {
+        this.dashBoard.drawSteering(this.ctx, this.isLeftPressed, this.isRightPressed);
+        this.dashBoard.drawSpeedometer(this.ctx);
+        this.dashBoard.drawProgressBar(this.ctx);
+         }
 
 
 
@@ -141,6 +147,7 @@ class Game {
         this.drawBackground();
         this.drawRoad();
         this.drawPlayer();
+        this.drawDashBoard();
     }
 
 
