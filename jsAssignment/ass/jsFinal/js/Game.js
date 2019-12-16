@@ -46,10 +46,10 @@ const CAR_RIGHT = {
 const DIFFERENCE_TO_INCREASE_NITRO = 7;
 
 //sound used in games
-const CAR_ACCELERATE = createSoundObject('sounds/accelerate.mp3');
-const CAR_DECELERATE = createSoundObject('sounds/car+geardown.mp3');
-const CAR_SKID = createSoundObject('sounds/skid.wav');
-const CAR_START = createSoundObject('sounds/carstartgarage.mp3');
+const CAR_ACCELERATE = createSoundObject('sounds/caraccelerate.mp3');
+const CAR_DECELERATE = createSoundObject('sounds/cargeardown.mp3');
+const CAR_SKID = createSoundObject('sounds/carskid.wav');
+const CARSTARTED = createSoundObject('sounds/carstart.mp3');
 
 // const KEY_LEFT = 37;
 // const KEY_RIGHT = 39;
@@ -94,8 +94,8 @@ class Game {
         this.initialCountDownValue = 3;
         this.isInTimeout = false;
 
-        this.isRightPressed = false;
-        this.isLeftPressed = false;
+        // this.isRightPressed = false;
+        // this.isLeftPressed = false;
         this.isUpPressed = false;
 
         this.isDownPressed = false;
@@ -554,7 +554,7 @@ class Game {
         let preLoader = new PreLoader();
         preLoader.load(() => {
             setInterval(this.gameLoop, 40);
-            CAR_START.play();
+            // CARSTARTED.play();
         });
     }
 }
