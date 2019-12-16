@@ -105,53 +105,53 @@ class Road {
     }
 
 
-    // drawEnemyCars(ctx, currentSegmentIndex, currentSegment, enemiesArr, baseSegmentWidth) {
+    drawEnemyCars(ctx, currentSegmentIndex, currentSegment, enemiesArr, baseSegmentWidth) {
 
-    //     enemiesArr.map(enemy => {
-    //         //draw on the road segment if it is the one containing the enemy
-    //         if (currentSegmentIndex === this.findSegmentIndex(enemy.zPos)) {
+        enemiesArr.map(enemy => {
+            //draw on the road segment if it is the one containing the enemy
+            if (currentSegmentIndex === this.findSegmentIndex(enemy.zPos)) {
 
-    //             //how much percent the car is in between p1 and p2
-    //             let percentageIn = (ROAD_PARAM.SEGMENT_LENGTH -
-    //                 (enemy.zPos - currentSegment.p1.worldCoordinates.z)) / ROAD_PARAM.SEGMENT_LENGTH;
+                //how much percent the car is in between p1 and p2
+                let percentageIn = (ROAD_PARAM.SEGMENT_LENGTH -
+                    (enemy.zPos - currentSegment.p1.worldCoordinates.z)) / ROAD_PARAM.SEGMENT_LENGTH;
 
-    //             // console.log(percentageIn)
-    //             // let carScale = currentSegment.p2.screenCoordinates.scale;
-    //             // let carX = currentSegment.p2.screenCoordinates.x + currentSegment.p2.screenCoordinates.w / enemy.x;
+                // console.log(percentageIn)
+                // let carScale = currentSegment.p2.screenCoordinates.scale;
+                // let carX = currentSegment.p2.screenCoordinates.x + currentSegment.p2.screenCoordinates.w / enemy.x;
 
-    //             // let carY = currentSegment.p2.screenCoordinates.y;
+                // let carY = currentSegment.p2.screenCoordinates.y;
 
-    //             let carScale = (currentSegment.p1.screenCoordinates.scale - currentSegment.p2.screenCoordinates.scale)
-    //                 * percentageIn + currentSegment.p1.screenCoordinates.scale;
+                let carScale = (currentSegment.p1.screenCoordinates.scale - currentSegment.p2.screenCoordinates.scale)
+                    * percentageIn + currentSegment.p1.screenCoordinates.scale;
 
-    //             //huna parne
-    //             //  let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
-    //             // * percentageIn + currentSegment.p2.screenCoordinates.x;
+                //huna parne
+                //  let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
+                // * percentageIn + currentSegment.p2.screenCoordinates.x;
 
-    //             // let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
-    //             //     * percentageIn + currentSegment.p2.screenCoordinates.x;
+                // let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
+                //     * percentageIn + currentSegment.p2.screenCoordinates.x;
 
-    //             // let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
-    //             //     * percentageIn + currentSegment.p2.screenCoordinates.x
-    //             //     + enemy.x * (baseSegmentWidth-currentSegment.p2.screenCoordinates.w)/baseSegmentWidth+enemy.x;
-    //             // enemy.x=carX;
+                // let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
+                //     * percentageIn + currentSegment.p2.screenCoordinates.x
+                //     + enemy.x * (baseSegmentWidth-currentSegment.p2.screenCoordinates.w)/baseSegmentWidth+enemy.x;
+                // enemy.x=carX;
 
-    //             let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
-    //                 * percentageIn + currentSegment.p2.screenCoordinates.x - currentSegment.p2.screenCoordinates.w / enemy.x;
+                let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
+                    * percentageIn + currentSegment.p2.screenCoordinates.x - currentSegment.p2.screenCoordinates.w / enemy.x;
 
-    //             let carY = (currentSegment.p1.screenCoordinates.y - currentSegment.p2.screenCoordinates.y)
-    //                 * percentageIn + currentSegment.p1.screenCoordinates.y;
+                let carY = (currentSegment.p1.screenCoordinates.y - currentSegment.p2.screenCoordinates.y)
+                    * percentageIn + currentSegment.p1.screenCoordinates.y;
 
-    //             // let carY = currentSegment.p2.screenCoordinates.y;
+                // let carY = currentSegment.p2.screenCoordinates.y;
 
-    //             let carWidth = (PLAYER_WIDTH * carScale * ROAD_PARAM.CANVAS_WIDTH * 5.5);
-    //             let carHeight = (PLAYER_HEIGHT * carScale * ROAD_PARAM.CANVAS_WIDTH * 5.5);
+                let carWidth = (PLAYER_WIDTH * carScale * ROAD_PARAM.CANVAS_WIDTH * 5.5);
+                let carHeight = (PLAYER_HEIGHT * carScale * ROAD_PARAM.CANVAS_WIDTH * 5.5);
 
-    //             carY += - carHeight;
-    //             enemy.draw(ctx, currentSegment.curvature, carX, carY, carWidth, carHeight);
-    //         }
-    //     });
-    // }
+                carY += - carHeight;
+                enemy.draw(ctx, currentSegment.curvature, carX, carY, carWidth, carHeight);
+            }
+        });
+    }
 
     drawRoad(ctx, position, playerX, enemiesArr) {
         let baseSegmentIndex = this.findSegmentIndex(position);
@@ -212,7 +212,7 @@ class Road {
             if (n % TREE_SPARSITY_FACTOR === 0)
                 this.drawTrees(ctx, this.segments[n]);
 
-            // this.drawEnemyCars(ctx, n, this.segments[n], enemiesArr, this.segments[baseSegmentIndex].p2.screenCoordinates.w);
+            this.drawEnemyCars(ctx, n, this.segments[n], enemiesArr, this.segments[baseSegmentIndex].p2.screenCoordinates.w);
         }
 
     }

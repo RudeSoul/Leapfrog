@@ -8,12 +8,29 @@ const drawPolygon = (ctx, x1, y1, x2, y2, x3, y3, x4, y4, color) => {
     ctx.closePath();
     ctx.fill();
 }
-const drawImage = (ctx, src, x, y, width, height, shadowColor) => {
-    let img = new Image();
-    img.src = src;
 
-    ctx.drawImage(img, x, y, width, height);
+const isMobile = () => {
+    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent));
 }
+
+const makeGradient = (ctx, startColor, endColor) => {
+    let speedGradient = ctx.createLinearGradient(0, 1000, 0, 0)
+    speedGradient.addColorStop(1, startColor);
+    speedGradient.addColorStop(0, endColor);
+    return speedGradient;
+}
+
+const writeText = (ctx, x, y, text, font, color) => {
+    ctx.font = font;
+    ctx.textAlign = 'center';
+    ctx.fillStyle = color;
+    ctx.shadowColor = 'black';
+    ctx.shadowBlur = 40;
+    ctx.fillText(text, x, y);
+
+    ctx.shadowBlur = 0;
+}
+
 const drawRect = (ctx, xPos, yPos, width, height, color, shadowBlur) => {
     ctx.beginPath();
     ctx.fillStyle = color;
@@ -28,18 +45,44 @@ const drawRect = (ctx, xPos, yPos, width, height, color, shadowBlur) => {
     ctx.closePath();
     ctx.shadowBlur = 0;
 }
-const writeText = (ctx, x, y, text, font, color) => {
-    ctx.font = font;
-    ctx.textAlign = 'center';
-    ctx.fillStyle = color;
-    ctx.shadowColor = 'black';
-    ctx.shadowBlur = 40;
-    ctx.fillText(text, x, y);
 
+const calculateSpeedAngle = (speedRatio, a, b) => {
+    let degree = (a - b) * speedRatio + b;
+    let radian = (degree * Math.PI) / 180;
+    return radian <= 1.45 ? radian : 1.45;
+}
+
+const calculateRPMAngle = (speedRatio, a, b) => {
+    let degree = (a - b) * (speedRatio) + b;
+    let radian = (degree * Math.PI) / 180;
+    return radian >= -0.46 ? radian : -0.46;
+}
+
+const drawSpeedoMeterArc = function(ctx, colorGradient, x, y, radius, startAngle, endAngle, anticlockwise, shadowColor){
+    ctx.beginPath();
+    ctx.lineWidth = 33 * HEIGHT_MULTIPLIER + 33;
+    ctx.strokeStyle = colorGradient;
+
+    ctx.shadowColor = shadowColor;
+    ctx.shadowBlur = 20;
+    ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise | false);
+
+    ctx.stroke();
+    ctx.closePath();
+    ctx.shadowColor = shadowColor;
     ctx.shadowBlur = 0;
+
+}
+
+const drawImage = (ctx, src, x, y, width, height, shadowColor) => {
+    let img = new Image();
+    img.src = src;
+
+    ctx.drawImage(img, x, y, width, height);
 }
 
 const getEnterCurvature = (currentSegment, goal, length) => {
+    //getting equal increments so that we can add in each segment
     let percent = goal / length;
     return currentSegment * percent + percent;
 }
@@ -62,4 +105,12 @@ const createSoundObject = location => {
 
 const generateRandomNO = (max = 1, min = 0) => {
     return (Math.floor(Math.random() * (max - min + 1)) + min);
+}
+
+const storeData = (key, data) => {
+    localStorage[key] = data;
+}
+
+const getData = key => {
+    return (parseInt(localStorage[key]));
 }

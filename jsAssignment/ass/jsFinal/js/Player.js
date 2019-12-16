@@ -14,7 +14,7 @@ const CENTRIFUGAL_FORCE = 0.0007;
 const PLAYER_WIDTH = 200;
 const PLAYER_HEIGHT = 150;
 const MAX_NITRO = 400;
-
+//the multiple by which the speed is changed when nitro is pressed
 const NITRO_MULTIPLIER_INCREMENT = 14;
 const NITRO_INCREASE_FACTOR = 100;
 const NITRO_DECREASE_FACTOR = 50;
@@ -72,6 +72,13 @@ class Player {
 
     checkAndHandleEnemyCollision(currentZ, enemiesArr) {
         enemiesArr.map((enemy, index) => {
+            //    if(index===1) console.log(enemy.x, (this.playerX*ROAD_PARAM.WIDTH/3))  
+            // if (index === 0) 
+            // console.log(enemy.x, (this.playerX * ROAD_PARAM.WIDTH / 3) + PLAYER_WIDTH * 5)
+            // enemy.x + PLAYER_WIDTH * 5 > (this.playerX * ROAD_PARAM.WIDTH) ,
+            // enemy.zPos < currentZ + (3000) ,
+            // (3000) + enemy.zPos > currentZ);
+
 
             if (enemy.x < (this.playerX * ROAD_PARAM.WIDTH / 3) + PLAYER_WIDTH * PLAYER_WIDTH_MULTIPLIER &&
                 enemy.x + PLAYER_WIDTH * ENEMY_WIDTH_MULTIPLIER > (this.playerX * ROAD_PARAM.WIDTH) &&

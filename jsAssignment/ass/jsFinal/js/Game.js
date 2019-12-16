@@ -46,16 +46,16 @@ const CAR_RIGHT = {
 const DIFFERENCE_TO_INCREASE_NITRO = 7;
 
 //sound used in games
-const CAR_ACCELERATE = createSoundObject('sounds/caraccelerate.mp3');
-const CAR_DECELERATE = createSoundObject('sounds/cargeardown.mp3');
-const CAR_SKID = createSoundObject('sounds/carskid.wav');
-const CAR_START = createSoundObject('sounds/carstart.mp3');
+const CAR_ACCELERATE = createSoundObject('sounds/accelerate.mp3');
+const CAR_DECELERATE = createSoundObject('sounds/car+geardown.mp3');
+const CAR_SKID = createSoundObject('sounds/skid.wav');
+const CAR_START = createSoundObject('sounds/carstartgarage.mp3');
 
-const KEY_LEFT = 37;
-const KEY_RIGHT = 39;
+// const KEY_LEFT = 37;
+// const KEY_RIGHT = 39;
 const KEY_UP = 38;
 const KEY_DOWN = 40;
-const KEY_SPACE = 32;
+// const KEY_SPACE = 32;
 const BACKGROUND_MOVEMENT_FACTOR = 14;
 
 const PLAYER_NAME = [
@@ -357,7 +357,6 @@ class Game {
         this.dashBoard.drawSteering(this.ctx, this.isLeftPressed, this.isRightPressed);
         this.dashBoard.drawSpeedometer(this.ctx, this.player.speed, MAX_SPEED);
         this.dashBoard.drawProgressBar(this.ctx, this.road.findSegmentIndex(this.position), TOTAL_LENGTH_OF_ROAD);
-
     }
 
     /**
@@ -398,10 +397,10 @@ class Game {
         if (this.isInitialCountDownOngoing)
             writeText(
                 this.ctx,
-                this.canvas.width / 2, 490 * HEIGHT_MULTIPLIER + 490,
+                this.canvas.width / 2, 690 * HEIGHT_MULTIPLIER + 490,
                 this.initialCountDownValue,
-                '700 150px  PerfectDark',
-                'white'
+                '900 80px  lightDark',
+                'rgb(235, 137, 52)'
             );
 
         if (this.isInitialCountDownOngoing && !this.isInTimeout) {
@@ -411,7 +410,7 @@ class Game {
                 if (this.initialCountDownValue === 'GO!!') {
                     this.isInitialCountDownOngoing = false;
                     this.addEventListeners();
-                    // this.isUpPressed = isMobile();
+                    this.isUpPressed = isMobile();
                 }
 
                 if (this.initialCountDownValue === 1) this.initialCountDownValue = 'GO!!';
@@ -488,15 +487,15 @@ class Game {
     keyDownHandler(e) {
 
         switch (e.keyCode) {
-            case KEY_RIGHT:
-                this.isRightPressed = true;
-                this.carSprite = CAR_RIGHT;
-                break;
+            // case KEY_RIGHT:
+            //     this.isRightPressed = true;
+            //     this.carSprite = CAR_RIGHT;
+            //     break;
 
-            case KEY_LEFT:
-                this.isLeftPressed = true;
-                this.carSprite = CAR_LEFT;
-                break;
+            // case KEY_LEFT:
+            //     this.isLeftPressed = true;
+            //     this.carSprite = CAR_LEFT;
+            //     break;
 
             case KEY_UP:
                 this.isUpPressed = true;
@@ -506,9 +505,9 @@ class Game {
                 this.isDownPressed = true;
                 break;
 
-            case KEY_SPACE:
-                this.isSpacePressed = true;
-                break;
+            // case KEY_SPACE:
+            //     this.isSpacePressed = true;
+            //     break;
         }
     }
 
@@ -521,15 +520,15 @@ class Game {
     keyUpHandler(e) {
 
         switch (e.keyCode) {
-            case KEY_RIGHT:
-                this.isRightPressed = false;
-                this.carSprite = CAR_CENTRE;
-                break;
+            // case KEY_RIGHT:
+            //     this.isRightPressed = false;
+            //     this.carSprite = CAR_CENTRE;
+            //     break;
 
-            case KEY_LEFT:
-                this.isLeftPressed = false;
-                this.carSprite = CAR_CENTRE;
-                break;
+            // case KEY_LEFT:
+            //     this.isLeftPressed = false;
+            //     this.carSprite = CAR_CENTRE;
+            //     break;
 
             case KEY_UP:
                 this.isUpPressed = false;
@@ -539,9 +538,9 @@ class Game {
                 this.isDownPressed = false;
                 break;
 
-            case KEY_SPACE:
-                this.isSpacePressed = false;
-                break;
+            // case KEY_SPACE:
+            //     this.isSpacePressed = false;
+            //     break;
         }
     }
 
@@ -551,10 +550,11 @@ class Game {
      * @memberof Game
      */
     start() {
+        //load all the images before the game starts
         let preLoader = new PreLoader();
         preLoader.load(() => {
             setInterval(this.gameLoop, 40);
-            // CAR_START.play();
+            CAR_START.play();
         });
     }
 }
