@@ -1,11 +1,152 @@
+const OFF_ROAD_SPEED_DECREASE_FACTOR = 4;
+const ACCELERATION_DECREASE_FACTOR = 150;
+const BREAKING_DECREASE_FACTOR = 30;
+const DECELERATION_DECREASE_FACTOR = 140;
 
+const MAX_SPEED = 950;
+const OFF_ROAD_MAX_SPEED = MAX_SPEED / OFF_ROAD_SPEED_DECREASE_FACTOR;
+const ACCELERATION = MAX_SPEED / ACCELERATION_DECREASE_FACTOR;
+const BREAKING = -MAX_SPEED / BREAKING_DECREASE_FACTOR;
+const DECELERATION = -MAX_SPEED / DECELERATION_DECREASE_FACTOR;
+
+const TURNING_SPEED = 0.05;
+const CENTRIFUGAL_FORCE = 0.0007;
 const PLAYER_WIDTH = 200;
 const PLAYER_HEIGHT = 150;
+const MAX_NITRO = 400;
 
+const NITRO_MULTIPLIER_INCREMENT = 14;
+const NITRO_INCREASE_FACTOR = 100;
+const NITRO_DECREASE_FACTOR = 50;
+const CURVE_POSITION_UPDATE_THRESHOLD = 50;
+const PLAYER_Z_WIDTH = 700;
+const PLAYER_WIDTH_MULTIPLIER = 4;
+const ENEMY_WIDTH_MULTIPLIER = 13;
+const ENEMY_Z_WIDTH = 1200;
+const CAR_TO_BASE_SEGMENT_OFFSET = 4;
+const ROAD_CENTRE_TO_LEFT_TREE_DISTANCE = -1.25;
+const ROAD_CENTRE_TO_RIGHT_TREE_DISTANCE = 1.55;
+/**
+ *
+ *
+ * @class Player
+ */
 class Player {
     constructor() {
         this.speed = 0;
         this.playerX = 0;
+        this.nitro = 0;
+        this.rank = NO_OF_ENEMIES + 1;
+        this.behindEnemyName = '';
+        this.aheadEnemyName = '';
+    }
+
+    //sign is the -1 or +1 depending on the direction car is curved to 
+    updateX(sign) {
+        this.playerX += (sign * TURNING_SPEED);
+    }
+
+
+    updateXInCurve(curveValue) {
+        //we only update if there is speed ,if car is in stall  dont update
+        if (this.speed > CURVE_POSITION_UPDATE_THRESHOLD) this.playerX -= curveValue * CENTRIFUGAL_FORCE;
+    }
+
+    increaseNitro() {
+        if (this.nitro + MAX_NITRO / NITRO_INCREASE_FACTOR <= MAX_NITRO) this.nitro += MAX_NITRO / NITRO_INCREASE_FACTOR;
+    }
+
+    decreaseNitro() {
+        (this.nitro - MAX_NITRO / NITRO_DECREASE_FACTOR >= 0) ? this.nitro -= MAX_NITRO / NITRO_DECREASE_FACTOR : this.nitro = 0;
+    }
+
+    handleEnemyCollision(enemy) {
+        this.speed = 0;
+        enemy.handleCollision();
+    }
+
+    handleTreeCollision() {
+        this.speed = 0;
+
+    }
+
+    checkAndHandleEnemyCollision(currentZ, enemiesArr) {
+        enemiesArr.map((enemy, index) => {
+
+            if (enemy.x < (this.playerX * ROAD_PARAM.WIDTH / 3) + PLAYER_WIDTH * PLAYER_WIDTH_MULTIPLIER &&
+                enemy.x + PLAYER_WIDTH * ENEMY_WIDTH_MULTIPLIER > (this.playerX * ROAD_PARAM.WIDTH) &&
+                enemy.zPos < (currentZ + ROAD_PARAM.SEGMENT_LENGTH * 3) + (PLAYER_Z_WIDTH) &&
+                enemy.zPos - ENEMY_Z_WIDTH > currentZ
+            )
+                this.handleEnemyCollision(enemy);
+        });
+    }
+
+
+
+    checkAndHandleTreeCollision(segments, baseSegment) {
+
+        let currentSegment = segments[baseSegment + CAR_TO_BASE_SEGMENT_OFFSET];
+        if (((this.playerX >= ROAD_CENTRE_TO_RIGHT_TREE_DISTANCE && currentSegment.tree.sideToDrawTree > 0)
+            || (this.playerX <= ROAD_CENTRE_TO_LEFT_TREE_DISTANCE && currentSegment.tree.sideToDrawTree < 0))
+            && currentSegment.tree.isDrawn
+        )
+            this.handleTreeCollision();
+
+    }
+
+    calculateCurrentPosition(currentZ, enemiesArr, isGameOver) {
+        //flag that checks if we found previous and next plaayer
+        let found = false;
+
+        if (!isGameOver) {
+            let enemiesBehind = 0;
+            enemiesArr.map((enemy, index) => {
+                if (enemy.zPos < (currentZ + 3 * ROAD_PARAM.SEGMENT_LENGTH)) {
+                    enemiesBehind++;
+
+                    if (index === enemiesArr.length - 1) {
+                        this.behindEnemyName = enemiesArr[index].name;
+                        this.aheadEnemyName = '';
+                    }
+                } else {
+
+                    if (!found) {
+                        if (index != 0) this.behindEnemyName = enemiesArr[index - 1].name;
+                        this.aheadEnemyName = enemiesArr[index].name;
+                        found = true;
+                    }
+                }
+            });
+            this.rank = NO_OF_ENEMIES - enemiesBehind + 1;
+        }
+    }
+
+    updateSpeed(buttonState) {
+        //changes the max speed and acceleration depending upon the position on the road and nitro
+        let currentMaxSpeed, currentAcceleration = ACCELERATION;
+
+        //changes max speed depending on the road type
+        currentMaxSpeed = (this.playerX < -1.3 || this.playerX > 0.8) ? OFF_ROAD_MAX_SPEED : MAX_SPEED;
+
+        //changes max speed depending upon nitro
+        if (buttonState.isSpacePressed && this.nitro > 0) {
+            currentMaxSpeed *= NITRO_MULTIPLIER_INCREMENT;
+            currentAcceleration *= NITRO_MULTIPLIER_INCREMENT;
+            this.decreaseNitro();
+        }
+
+        //if up button is pressed update speed of car
+        if (buttonState.isUpPressed)
+            (!(this.speed > currentMaxSpeed)) ? this.speed += currentAcceleration : this.speed = currentMaxSpeed;
+
+        //if down button is pressed decrease the speed of the car
+        if (buttonState.isDownPressed)
+            (!(this.speed + BREAKING <= 0)) ? this.speed += BREAKING : this.speed = 0;
+
+        // if no button is pressed constantly decrease the speed of the car
+        if (!buttonState.isUpPressed && !buttonState.isDownPressed)
+            (!(this.speed + DECELERATION <= 0)) ? this.speed += DECELERATION : this.speed = 0;
 
     }
 
