@@ -48,14 +48,13 @@ const DIFFERENCE_TO_INCREASE_NITRO = 7;
 //sound used in games
 const CAR_ACCELERATE = createSoundObject('sounds/caraccelerate.mp3');
 const CAR_DECELERATE = createSoundObject('sounds/cargeardown.mp3');
-const CAR_SKID = createSoundObject('sounds/carskid.wav');
+const CAR_SKID = createSoundObject('sounds/carskid.mp3');
 const CARSTARTED = createSoundObject('sounds/carstart.mp3');
 
-// const KEY_LEFT = 37;
-// const KEY_RIGHT = 39;
+const KEY_LEFT = 37;
+const KEY_RIGHT = 39;
 const KEY_UP = 38;
 const KEY_DOWN = 40;
-// const KEY_SPACE = 32;
 const BACKGROUND_MOVEMENT_FACTOR = 14;
 
 const PLAYER_NAME = [
@@ -94,8 +93,8 @@ class Game {
         this.initialCountDownValue = 3;
         this.isInTimeout = false;
 
-        // this.isRightPressed = false;
-        // this.isLeftPressed = false;
+        this.isRightPressed = false;
+        this.isLeftPressed = false;
         this.isUpPressed = false;
 
         this.isDownPressed = false;
@@ -487,15 +486,15 @@ class Game {
     keyDownHandler(e) {
 
         switch (e.keyCode) {
-            // case KEY_RIGHT:
-            //     this.isRightPressed = true;
-            //     this.carSprite = CAR_RIGHT;
-            //     break;
+            case KEY_RIGHT:
+                this.isRightPressed = true;
+                this.carSprite = CAR_RIGHT;
+                break;
 
-            // case KEY_LEFT:
-            //     this.isLeftPressed = true;
-            //     this.carSprite = CAR_LEFT;
-            //     break;
+            case KEY_LEFT:
+                this.isLeftPressed = true;
+                this.carSprite = CAR_LEFT;
+                break;
 
             case KEY_UP:
                 this.isUpPressed = true;
@@ -505,9 +504,6 @@ class Game {
                 this.isDownPressed = true;
                 break;
 
-            // case KEY_SPACE:
-            //     this.isSpacePressed = true;
-            //     break;
         }
     }
 
@@ -520,15 +516,15 @@ class Game {
     keyUpHandler(e) {
 
         switch (e.keyCode) {
-            // case KEY_RIGHT:
-            //     this.isRightPressed = false;
-            //     this.carSprite = CAR_CENTRE;
-            //     break;
+            case KEY_RIGHT:
+                this.isRightPressed = false;
+                this.carSprite = CAR_CENTRE;
+                break;
 
-            // case KEY_LEFT:
-            //     this.isLeftPressed = false;
-            //     this.carSprite = CAR_CENTRE;
-            //     break;
+            case KEY_LEFT:
+                this.isLeftPressed = false;
+                this.carSprite = CAR_CENTRE;
+                break;
 
             case KEY_UP:
                 this.isUpPressed = false;
@@ -538,9 +534,7 @@ class Game {
                 this.isDownPressed = false;
                 break;
 
-            // case KEY_SPACE:
-            //     this.isSpacePressed = false;
-            //     break;
+
         }
     }
 
