@@ -3,8 +3,20 @@ var roadValues = document.getElementById("roadValues");
 var leftCurvature = document.getElementById("leftCurvature");
 var rightCurvature = document.getElementById("rightCurvature");
 var roadLength = document.getElementById("roadLength");
-var submitButton = document.getElementById("submitButton");
-var racingMap = []
+// var submitButton = document.getElementById("submitButton");
+// const racingTrack = [
+//     { number: 100, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 500, curvature: 0 },
+// ];
+const racingMap = [];
 dropDownBtn.style.display = "block";
 roadValues.style.display = "none";
 
@@ -17,14 +29,13 @@ dropDownBtn.addEventListener("click", function (event) {
 
 submitButton.addEventListener("click", function (event) {
     var obj = { };
-    var left = leftCurvature.value;
-    var length = roadLength.value;
-    obj.key1 = left;
-    obj.key2 = length;
+    var left = parseInt(leftCurvature.value);
+    var length = parseInt(roadLength.value);
+    obj.number = left;
+    obj.curvature = length;
     racingMap.push(obj);
     console.log(racingMap);
-    
-    console.log(left);
+
 
 });
 

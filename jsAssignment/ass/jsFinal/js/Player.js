@@ -1,23 +1,15 @@
-const OFF_ROAD_SPEED_DECREASE_FACTOR = 4;
-const ACCELERATION_DECREASE_FACTOR = 150;
-const BREAKING_DECREASE_FACTOR = 30;
-const DECELERATION_DECREASE_FACTOR = 140;
-
 const MAX_SPEED = 950;
-const OFF_ROAD_MAX_SPEED = MAX_SPEED / OFF_ROAD_SPEED_DECREASE_FACTOR;
-const ACCELERATION = MAX_SPEED / ACCELERATION_DECREASE_FACTOR;
-const BREAKING = -MAX_SPEED / BREAKING_DECREASE_FACTOR;
-const DECELERATION = -MAX_SPEED / DECELERATION_DECREASE_FACTOR;
+const OFF_ROAD_MAX_SPEED = 220;
+const ACCELERATION = 8;
+const BREAKING = -20;
+const DECELERATION = -7;
 
 const TURNING_SPEED = 0.05;
 const CENTRIFUGAL_FORCE = 0.0007;
 const PLAYER_WIDTH = 200;
 const PLAYER_HEIGHT = 150;
-const MAX_NITRO = 400;
-//the multiple by which the speed is changed when nitro is pressed
-const NITRO_MULTIPLIER_INCREMENT = 14;
-const NITRO_INCREASE_FACTOR = 100;
-const NITRO_DECREASE_FACTOR = 50;
+
+
 const CURVE_POSITION_UPDATE_THRESHOLD = 50;
 const PLAYER_Z_WIDTH = 700;
 const PLAYER_WIDTH_MULTIPLIER = 4;
@@ -52,14 +44,6 @@ class Player {
         if (this.speed > CURVE_POSITION_UPDATE_THRESHOLD) this.playerX -= curveValue * CENTRIFUGAL_FORCE;
     }
 
-    increaseNitro() {
-        if (this.nitro + MAX_NITRO / NITRO_INCREASE_FACTOR <= MAX_NITRO) this.nitro += MAX_NITRO / NITRO_INCREASE_FACTOR;
-    }
-
-    decreaseNitro() {
-        (this.nitro - MAX_NITRO / NITRO_DECREASE_FACTOR >= 0) ? this.nitro -= MAX_NITRO / NITRO_DECREASE_FACTOR : this.nitro = 0;
-    }
-
     handleEnemyCollision(enemy) {
         this.speed = 0;
         enemy.handleCollision();
@@ -72,13 +56,6 @@ class Player {
 
     checkAndHandleEnemyCollision(currentZ, enemiesArr) {
         enemiesArr.map((enemy, index) => {
-            //    if(index===1) console.log(enemy.x, (this.playerX*ROAD_PARAM.WIDTH/3))  
-            // if (index === 0) 
-            // console.log(enemy.x, (this.playerX * ROAD_PARAM.WIDTH / 3) + PLAYER_WIDTH * 5)
-            // enemy.x + PLAYER_WIDTH * 5 > (this.playerX * ROAD_PARAM.WIDTH) ,
-            // enemy.zPos < currentZ + (3000) ,
-            // (3000) + enemy.zPos > currentZ);
-
 
             if (enemy.x < (this.playerX * ROAD_PARAM.WIDTH / 3) + PLAYER_WIDTH * PLAYER_WIDTH_MULTIPLIER &&
                 enemy.x + PLAYER_WIDTH * ENEMY_WIDTH_MULTIPLIER > (this.playerX * ROAD_PARAM.WIDTH) &&
@@ -130,23 +107,18 @@ class Player {
     }
 
     updateSpeed(buttonState) {
-        //changes the max speed and acceleration depending upon the position on the road and nitro
+        //changes the max speed and acceleration depending upon the position on the road
         let currentMaxSpeed, currentAcceleration = ACCELERATION;
 
         //changes max speed depending on the road type
         currentMaxSpeed = (this.playerX < -1.3 || this.playerX > 0.8) ? OFF_ROAD_MAX_SPEED : MAX_SPEED;
 
-        //changes max speed depending upon nitro
-        if (buttonState.isSpacePressed && this.nitro > 0) {
-            currentMaxSpeed *= NITRO_MULTIPLIER_INCREMENT;
-            currentAcceleration *= NITRO_MULTIPLIER_INCREMENT;
-            this.decreaseNitro();
-        }
 
         //if up button is pressed update speed of car
-        if (buttonState.isUpPressed)
+        if (buttonState.isUpPressed){
             (!(this.speed > currentMaxSpeed)) ? this.speed += currentAcceleration : this.speed = currentMaxSpeed;
-
+            
+        }
         //if down button is pressed decrease the speed of the car
         if (buttonState.isDownPressed)
             (!(this.speed + BREAKING <= 0)) ? this.speed += BREAKING : this.speed = 0;
@@ -157,16 +129,9 @@ class Player {
 
     }
 
-    draw(ctx, image, sprite, destX, destY, isSpacePressed) {
+    draw(ctx, image, sprite, destX, destY) {
         let spriteSheet = new Image();
         spriteSheet.src = image;
-
-        //this gives the nitro effect
-        if (this.nitro > 0 && isSpacePressed) {
-            ctx.shadowColor = '#41dcf4';
-            ctx.shadowBlur = 100;
-            ctx.shadowOffsetY = 60;
-        }
 
         ctx.drawImage(
             spriteSheet,

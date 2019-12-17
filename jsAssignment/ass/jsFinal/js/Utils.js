@@ -9,9 +9,6 @@ const drawPolygon = (ctx, x1, y1, x2, y2, x3, y3, x4, y4, color) => {
     ctx.fill();
 }
 
-const isMobile = () => {
-    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent));
-}
 
 const makeGradient = (ctx, startColor, endColor) => {
     let speedGradient = ctx.createLinearGradient(0, 1000, 0, 0)
@@ -49,14 +46,9 @@ const drawRect = (ctx, xPos, yPos, width, height, color, shadowBlur) => {
 const calculateSpeedAngle = (speedRatio, a, b) => {
     let degree = (a - b) * speedRatio + b;
     let radian = (degree * Math.PI) / 180;
-    return radian <= 1.45 ? radian : 1.45;
+    return radian <= 7 ? radian : 7;
 }
 
-const calculateRPMAngle = (speedRatio, a, b) => {
-    let degree = (a - b) * (speedRatio) + b;
-    let radian = (degree * Math.PI) / 180;
-    return radian >= -0.46 ? radian : -0.46;
-}
 
 const drawSpeedoMeterArc = function(ctx, colorGradient, x, y, radius, startAngle, endAngle, anticlockwise, shadowColor){
     ctx.beginPath();

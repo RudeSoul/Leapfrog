@@ -1,11 +1,11 @@
 const ROAD_PARAM = {
-    WIDTH: 9000,
-    SEGMENT_LENGTH: 550,  // length of a single segment
-    SIDE_STRIP_LENGTH: 5,  // number of segments per red/white sideStrip strip
+    WIDTH: 8000,
+    SEGMENT_LENGTH: 400,  // length of a single segment
+    SIDE_STRIP_LENGTH: 5,  // number of segments sideStrip strip
     NO_OF_LANES: 2,
     CAMERA_HEIGHT: 4000,       // z height of camera
-    CAMERA_DEPTH: 0.25,           // z distance camera is from the screen 
-    NO_OF_SEG_TO_DRAW: 200,      //number of seg we draw at a time
+    CAMERA_DEPTH: 0.15,           // z distance camera is from the screen 
+    NO_OF_SEG_TO_DRAW: 100,      //number of seg we draw at a time
     COLORS: [
         { road: '#696969', grass: '#9c1010', sideStrip: 'red', lane: 'white' },
         { road: '#696969', grass: '#9e2020', sideStrip: 'white' },
@@ -51,13 +51,12 @@ class Road {
 
     initializeSegments(curvature) {
         let i = this.segments.length;
-
         this.segments.push({
             ///each segment is constructed of two points p1 and p2 which are the two opposite ends 
             p1: {
                 cameraCoordinates: { x: 0, y: 0, z: 0 },
                 screenCoordinates: { x: 0, y: 0, scale: 0 },
-                worldCoordinates: { x: 0, y: 0, z: i * ROAD_PARAM.SEGMENT_LENGTH }
+                 worldCoordinates: { x: 0, y: 0, z: i * ROAD_PARAM.SEGMENT_LENGTH }
             },
             p2: {
                 cameraCoordinates: { x: 0, y: 0, z: 0 },
@@ -114,35 +113,18 @@ class Road {
                 //how much percent the car is in between p1 and p2
                 let percentageIn = (ROAD_PARAM.SEGMENT_LENGTH -
                     (enemy.zPos - currentSegment.p1.worldCoordinates.z)) / ROAD_PARAM.SEGMENT_LENGTH;
-
-                // console.log(percentageIn)
-                // let carScale = currentSegment.p2.screenCoordinates.scale;
-                // let carX = currentSegment.p2.screenCoordinates.x + currentSegment.p2.screenCoordinates.w / enemy.x;
-
-                // let carY = currentSegment.p2.screenCoordinates.y;
-
+                
                 let carScale = (currentSegment.p1.screenCoordinates.scale - currentSegment.p2.screenCoordinates.scale)
                     * percentageIn + currentSegment.p1.screenCoordinates.scale;
 
-                //huna parne
-                //  let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
-                // * percentageIn + currentSegment.p2.screenCoordinates.x;
-
-                // let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
-                //     * percentageIn + currentSegment.p2.screenCoordinates.x;
-
-                // let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
-                //     * percentageIn + currentSegment.p2.screenCoordinates.x
-                //     + enemy.x * (baseSegmentWidth-currentSegment.p2.screenCoordinates.w)/baseSegmentWidth+enemy.x;
-                // enemy.x=carX;
-
+                
                 let carX = (currentSegment.p1.screenCoordinates.x - currentSegment.p2.screenCoordinates.x)
                     * percentageIn + currentSegment.p2.screenCoordinates.x - currentSegment.p2.screenCoordinates.w / enemy.x;
 
                 let carY = (currentSegment.p1.screenCoordinates.y - currentSegment.p2.screenCoordinates.y)
                     * percentageIn + currentSegment.p1.screenCoordinates.y;
 
-                // let carY = currentSegment.p2.screenCoordinates.y;
+
 
                 let carWidth = (PLAYER_WIDTH * carScale * ROAD_PARAM.CANVAS_WIDTH * 5.5);
                 let carHeight = (PLAYER_HEIGHT * carScale * ROAD_PARAM.CANVAS_WIDTH * 5.5);
@@ -155,13 +137,12 @@ class Road {
 
     drawRoad(ctx, position, playerX, enemiesArr) {
         let baseSegmentIndex = this.findSegmentIndex(position);
-
         let dx = -this.segments[baseSegmentIndex].curvature, x = 0;
-
+        
         for (let n = baseSegmentIndex; n < ROAD_PARAM.NO_OF_SEG_TO_DRAW + baseSegmentIndex; n++) {
             let segment = this.segments[n];
-
             //projecting the two points on the road independently 
+            // console.log('p1 egment',segment.p1);
             this.project(
                 segment.p1,
                 (playerX * ROAD_PARAM.WIDTH) - x,
@@ -191,7 +172,6 @@ class Road {
             if ((segment.p2.screenCoordinates.y >= ROAD_PARAM.CANVAS_HEIGHT)) continue;
 
 
-            // if(n==4) segment.color=  { road: '#fff', grass: '#fff', sideStrip: '#fff', lane: '#fff' };
             this.drawSegment(
                 ctx,
                 n,

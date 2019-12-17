@@ -27,8 +27,8 @@ class DashBoard {
     }
 
     drawSpeed(ctx, currentSpeed, maxSpeed) {
-        const speed = Math.ceil(currentSpeed / maxSpeed * 160);
-        const fontSize = 45 * HEIGHT_MULTIPLIER + 45;
+        const speed = Math.ceil(currentSpeed / maxSpeed * 150);
+        const fontSize = 45 * HEIGHT_MULTIPLIER + 65;
 
         writeText(
             ctx,
@@ -75,35 +75,17 @@ class DashBoard {
         const colorGradient = makeGradient(ctx, '#41dcf4', '#00b8fe');
         const shadowColor = '#00c6ff';
 
-        // drawSpeedoMeterArc(
-        //     ctx,
-        //     colorGradient,
-        //     ROAD_PARAM.CANVAS_WIDTH / 2 - (600 * WIDTH_MULTIPLIER + 600),
-        //     ROAD_PARAM.CANVAS_HEIGHT - (230 * HEIGHT_MULTIPLIER + 230),
-        //     186 * HEIGHT_MULTIPLIER + 186,
-        //     0.6 * Math.PI,
-        //     calculateSpeedAngle(currentSpeed / maxSpeed, 83, 35) * Math.PI,
-        //     false,
-        //     shadowColor
-        // );
-    }
-
-    drawRPMNeedle(ctx, currentSpeed, maxSpeed) {
-        const colorGradient = makeGradient(ctx, '#700d91', '#700d91');
-        const shadowColor = '#00000';
-        const rpm = currentSpeed / maxSpeed * 9;
-
-        // drawSpeedoMeterArc(
-        //     ctx,
-        //     colorGradient,
-        //     ROAD_PARAM.CANVAS_WIDTH / 2 - (600 * WIDTH_MULTIPLIER + 600),
-        //     ROAD_PARAM.CANVAS_HEIGHT - (230 * HEIGHT_MULTIPLIER + 230),
-        //     186 * HEIGHT_MULTIPLIER + 186,
-        //     0.4 * Math.PI,
-        //     calculateRPMAngle(rpm, 0, 22) * Math.PI,
-        //     true,
-        //     shadowColor
-        // );
+        drawSpeedoMeterArc(
+            ctx,
+            colorGradient,
+            190,
+            310,
+            186 * HEIGHT_MULTIPLIER + 186,
+            0.6 * Math.PI,
+            calculateSpeedAngle(currentSpeed / maxSpeed, 83, 35) * Math.PI,
+            false,
+            shadowColor
+        );
     }
 
     drawSpeedometer(ctx, currentSpeed, maxSpeed) {
@@ -119,7 +101,6 @@ class DashBoard {
 
         this.drawSpeed(ctx, currentSpeed, maxSpeed);
         this.drawSpeedNeedle(ctx, currentSpeed, maxSpeed);
-        this.drawRPMNeedle(ctx, currentSpeed, maxSpeed);
     }
 
     drawProgressBar(ctx, baseSegment, totalSegments) {

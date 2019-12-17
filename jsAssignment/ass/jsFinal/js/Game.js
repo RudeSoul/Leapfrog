@@ -1,16 +1,18 @@
-const racingTrack = [
-    { number: 100, curvature: 0 },
-    { number: 300, curvature: 0 },
-    { number: 300, curvature: 0 },
-    { number: 300, curvature: 0 },
-    { number: 300, curvature: 0 },
-    { number: 300, curvature: 0 },
-    { number: 300, curvature: 0 },
-    { number: 300, curvature: 0 },
-    { number: 300, curvature: 0 },
-    { number: 500, curvature: 0 },
-];
 
+// const racingTrack = [
+//     { number: 100, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 300, curvature: 0 },
+//     { number: 500, curvature: 0 },
+// ];
+const racingTrack = racingMap;
+console.log(racingTrack);
 const FINISH_LINE_LENGTH = 140;
 
 const TOTAL_LENGTH_OF_ROAD = (() => {
@@ -42,8 +44,6 @@ const CAR_RIGHT = {
     w: 77,
     h: 38
 };
-
-const DIFFERENCE_TO_INCREASE_NITRO = 7;
 
 //sound used in games
 const CAR_ACCELERATE = createSoundObject('sounds/caraccelerate.mp3');
@@ -286,9 +286,8 @@ class Game {
      * @memberof Game
      */
     update() {
-        // this.updateNitro();
 
-        this.player.updateSpeed({ isUpPressed: this.isUpPressed, isDownPressed: this.isDownPressed, isSpacePressed: this.isSpacePressed });
+        this.player.updateSpeed({ isUpPressed: this.isUpPressed, isDownPressed: this.isDownPressed});
 
         //we create a illusion of curve by moving the car as per the curve
         this.updatePlayerAsPerCurve();
@@ -325,7 +324,7 @@ class Game {
             this.carSprite,
             this.canvas.width / 2 + 30 * WIDTH_MULTIPLIER + 30,
             600 * HEIGHT_MULTIPLIER + 600,
-            this.isSpacePressed
+            
         );
     }
 
@@ -409,7 +408,6 @@ class Game {
                 if (this.initialCountDownValue === 'GO!!') {
                     this.isInitialCountDownOngoing = false;
                     this.addEventListeners();
-                    this.isUpPressed = isMobile();
                 }
 
                 if (this.initialCountDownValue === 1) this.initialCountDownValue = 'GO!!';
@@ -466,7 +464,6 @@ class Game {
      * @memberof Game
      */
     gameLoop() {
-        //  CLEARING THE SCREEN BEFORE EACH UPDATE
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.playSounds();
@@ -544,7 +541,6 @@ class Game {
      * @memberof Game
      */
     start() {
-        //load all the images before the game starts
         let preLoader = new PreLoader();
         preLoader.load(() => {
             setInterval(this.gameLoop, 40);
@@ -553,8 +549,22 @@ class Game {
     }
 }
 
-document.getElementById('main-canvas').width = ROAD_PARAM.CANVAS_WIDTH;
-document.getElementById('main-canvas').width = ROAD_PARAM.CANVAS_HEIGHT;
 
-const game = new Game();
-game.start();
+
+
+
+const startGame = document.getElementById('levelEditorBtn');
+startGame.style.display = 'block';
+
+
+startGame.addEventListener('click', function () {
+    startGame.style.display = 'none';
+    roadValues.style.display = 'none';
+    document.getElementById('main-canvas').width = ROAD_PARAM.CANVAS_WIDTH;
+    document.getElementById('main-canvas').width = ROAD_PARAM.CANVAS_HEIGHT;
+    const game = new Game();
+    game.start(); 
+})
+
+
+

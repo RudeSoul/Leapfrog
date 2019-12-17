@@ -11,6 +11,29 @@
 </head>
 
 <body>
+        
+             <input id="dropDownBtn" type="button" value="Create Road" />
+
+    <div id="roadValues">
+      Length:<br />
+      <input type="number" name="length" id="roadLength" value="" />
+      <br />
+      Left Curve:<br />
+      <input type="number" name="curve left" id="leftCurvature" value="" />
+      <br />
+      right Curve:<br />
+      <input type="number" name="curve right" id="rightCurvature" value="" />
+      <br />
+      <input type="button" id="submitButton" value="Create Road" />
+      <br>
+      <br>
+      <a>IF YOU ARE TIRED OF MAKING MAP PLAY GAME BY CLICKING BELOW</a>
+      <br>
+      <br>
+      <input type="button" id="levelEditorBtn" value="START GAME"/>
+    </div>
+
+    
 
     <canvas id="main-canvas"></canvas>
     
@@ -21,6 +44,8 @@
     <script src="./js/Enemies.js"></script>
     <script src="./js/Player.js"></script>
     <script src="./js/Road.js"></script>
+        <script src="./js/createMap.js"></script>
+    <script src="./js/disable.js"></script>
     <script src="./js/Game.js"></script>
 
 </body>
