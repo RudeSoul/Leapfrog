@@ -23,7 +23,7 @@ const TOTAL_LENGTH_OF_ROAD = (() => {
     return total + FINISH_LINE_LENGTH;
 })();
 
-//car images from sprite images
+
 const CAR_CENTRE = {
     x: 0,
     y: 130,
@@ -45,7 +45,6 @@ const CAR_RIGHT = {
     h: 38
 };
 
-//sound used in games
 const CAR_ACCELERATE = createSoundObject('sounds/caraccelerate.mp3');
 const CAR_DECELERATE = createSoundObject('sounds/cargeardown.mp3');
 const CAR_SKID = createSoundObject('sounds/carskid.mp3');
