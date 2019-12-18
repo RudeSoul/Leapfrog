@@ -1,15 +1,5 @@
-const racingTrack = RACING_MAP;
 const FINISH_LINE_LENGTH = 140;
-
-const TOTAL_LENGTH_OF_ROAD = (() => {
-    let total = 0;
-    for (let i = 0; i < racingTrack.length - 1; i++)
-        total += racingTrack[i].number;
-
-    return total + FINISH_LINE_LENGTH;
-})();
-
-
+let TOTAL_LENGTH_OF_ROAD;
 const CAR_CENTRE = {
     x: 0,
     y: 130,
@@ -533,25 +523,6 @@ class Game {
         });
     }
 }
-
-
-
-
-
-const startGame = document.getElementById('levelEditorBtn');
-startGame.style.display = 'block';
-mapSpace.style.display = 'block';
-
-
-startGame.addEventListener('click', function () {
-    startGame.style.display = 'none';
-    roadValues.style.display = 'none';
-    mapSpace.style.display = 'none';
-    document.getElementById('main-canvas').width = ROAD_PARAM.CANVAS_WIDTH;
-    document.getElementById('main-canvas').width = ROAD_PARAM.CANVAS_HEIGHT;
-    const game = new Game();
-    game.start();
-})
 
 
 
