@@ -1,18 +1,4 @@
-
-// const racingTrack = [
-//     { number: 100, curvature: 0 },
-//     { number: 300, curvature: 0 },
-//     { number: 300, curvature: 0 },
-//     { number: 300, curvature: 0 },
-//     { number: 300, curvature: 0 },
-//     { number: 300, curvature: 0 },
-//     { number: 300, curvature: 0 },
-//     { number: 300, curvature: 0 },
-//     { number: 300, curvature: 0 },
-//     { number: 500, curvature: 0 },
-// ];
-const racingTrack = racingMap;
-console.log(racingTrack);
+const racingTrack = RACING_MAP;
 const FINISH_LINE_LENGTH = 140;
 
 const TOTAL_LENGTH_OF_ROAD = (() => {
@@ -286,7 +272,7 @@ class Game {
      */
     update() {
 
-        this.player.updateSpeed({ isUpPressed: this.isUpPressed, isDownPressed: this.isDownPressed});
+        this.player.updateSpeed({ isUpPressed: this.isUpPressed, isDownPressed: this.isDownPressed });
 
         //we create a illusion of curve by moving the car as per the curve
         this.updatePlayerAsPerCurve();
@@ -323,7 +309,7 @@ class Game {
             this.carSprite,
             this.canvas.width / 2 + 30 * WIDTH_MULTIPLIER + 30,
             600 * HEIGHT_MULTIPLIER + 600,
-            
+
         );
     }
 
@@ -554,15 +540,17 @@ class Game {
 
 const startGame = document.getElementById('levelEditorBtn');
 startGame.style.display = 'block';
+mapSpace.style.display = 'block';
 
 
 startGame.addEventListener('click', function () {
     startGame.style.display = 'none';
     roadValues.style.display = 'none';
+    mapSpace.style.display = 'none';
     document.getElementById('main-canvas').width = ROAD_PARAM.CANVAS_WIDTH;
     document.getElementById('main-canvas').width = ROAD_PARAM.CANVAS_HEIGHT;
     const game = new Game();
-    game.start(); 
+    game.start();
 })
 
 

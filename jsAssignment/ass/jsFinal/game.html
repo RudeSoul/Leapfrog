@@ -15,23 +15,30 @@
              <input id="dropDownBtn" type="button" value="Create Road" />
 
     <div id="roadValues">
-      Length:<br />
-      <input type="number" name="length" id="roadLength" value="" />
+        <strong>Please Give Fessible Values on Road for Better Performance</strong>
+        <br>
+        <a class="anchor" >For Example <a class="message"><strong>::Length Of Road Segment::400 <br /> ::How much Road should be curve: -60 or 0 or +60</strong></a></a>
+        <br /><br />
+        length of Road Segment:<br />
+        <input type="number" name="curve left" id="roadLength" value="" />
+        <br />
+      How much Road Should Be curve:<br />
+      <input type="number" name="length" id="leftCurvature" value="" />
       <br />
-      Left Curve:<br />
-      <input type="number" name="curve left" id="leftCurvature" value="" />
-      <br />
-      right Curve:<br />
-      <input type="number" name="curve right" id="rightCurvature" value="" />
       <br />
       <input type="button" id="submitButton" value="Create Road" />
-      <br>
-      <br>
-      <a>IF YOU ARE TIRED OF MAKING MAP PLAY GAME BY CLICKING BELOW</a>
-      <br>
-      <br>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <a>IF YOU ARE TIRED OF MAKING MAP PLAY GAME :D </a>
+      <br /> <br />
       <input type="button" id="levelEditorBtn" value="START GAME"/>
     </div>
+
+
+    <canvas id="mapSpace" width="900" height="900" style="border:1px solid #d3d3d3;"></canvas>
 
     
 
@@ -44,8 +51,8 @@
     <script src="./js/Enemies.js"></script>
     <script src="./js/Player.js"></script>
     <script src="./js/Road.js"></script>
-        <script src="./js/createMap.js"></script>
-    <script src="./js/disable.js"></script>
+    <script src="./js/createMap.js"></script>
+    <script src="js/disable.js"></script>
     <script src="./js/Game.js"></script>
 
 </body>

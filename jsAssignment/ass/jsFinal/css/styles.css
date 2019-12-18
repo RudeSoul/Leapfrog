@@ -4,11 +4,7 @@
   src: url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 }
 
-/* #main-canvas {
-  background: #000;
-  display: block;
-  background-color: black;
-} */
+
 
 .background {
   width: 100%;
@@ -64,4 +60,18 @@ body {
   margin-left: 40.35416667%;
   margin-top: 4.04513541%;
   bottom: 100px;
+}
+
+
+.message{
+    display:none;
+    color:#000;
+    background:#deebff;
+    top:10px;
+}
+
+
+.anchor:hover + .message{
+    display:block !important;
+
 }
