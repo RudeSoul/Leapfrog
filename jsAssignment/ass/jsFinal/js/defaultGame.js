@@ -5,6 +5,7 @@ mapSpace.style.display = 'block';
 
 startDefaultGame.addEventListener('click', function () {
     racingTrack = DEFAULT_RACING_TRACK;
+    NO_OF_ENEMIES = 36;
     startDefaultGame.style.display = 'none';
     roadValues.style.display = 'none';
     mapSpace.style.display = 'none';

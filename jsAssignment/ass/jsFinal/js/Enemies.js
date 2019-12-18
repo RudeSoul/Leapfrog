@@ -1,6 +1,6 @@
-const NO_OF_ENEMIES = 1;
 const ENEMY_ACCELERATION_FACTOR = 80;
 const ENEMY_COLLISION_SPEED_DECREASE_FACTOR = 1.4;
+let NO_OF_ENEMIES;
 const ENEMY_IMAGES = [
     {
         carLeft: {
