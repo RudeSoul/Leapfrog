@@ -1,5 +1,0 @@
-
-const STEERING_ROTATION = 50;
-
-
-
