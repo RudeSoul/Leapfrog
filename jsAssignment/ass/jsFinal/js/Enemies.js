@@ -1,5 +1,18 @@
+/**
+ *
+ *
+ * @class Enemies
+ */
 class Enemies {
 
+  /**
+   *Creates an instance of Enemies.
+   * @param {*} maxSpeed
+   * @param {*} index
+   * @param {*} zPos
+   * @param {*} name
+   * @memberof Enemies
+   */
   constructor(maxSpeed, index, zPos, name) {
     this.speed = 0;
     this.maxSpeed = maxSpeed;
@@ -20,6 +33,13 @@ class Enemies {
   }
 
   //randomly generates the starting position of the enemy cars
+  /**
+   *
+   *
+   * @param {*} index
+   * @returns
+   * @memberof Enemies
+   */
   calculateRandomXPos(index) {
     let sign = (generateRandomNO(-1, 2) === 0) ? -1 : 1;
     return (sign * generateRandomNO(30, 200));
@@ -45,6 +65,17 @@ class Enemies {
     if ((this.x < -1.3 || this.x > 0.8)) this.x -= increment;
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} curvature
+   * @param {*} destX
+   * @param {*} destY
+   * @param {*} width
+   * @param {*} height
+   * @memberof Enemies
+   */
   draw(ctx, curvature, destX, destY, width, height) {
     let spriteSheet = new Image();
     spriteSheet.src = 'images/enemies.png';

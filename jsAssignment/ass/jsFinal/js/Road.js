@@ -11,6 +11,12 @@ class Road {
     this.segments = [];
   }
 
+  /**
+   *
+   *
+   * @param {*} curvature
+   * @memberof Road
+   */
   initializeSegments(curvature) {
     let i = this.segments.length;
     this.segments.push({
@@ -32,10 +38,11 @@ class Road {
   }
 
   /**
-   * this function returns -ve or +ve value for left and right side respectively.
-   * the sign is decided by random for straight roads
-   * for left turns it gives only gives +ve value
-   * and for right turn it only gives -ve values
+   *
+   *
+   * @param {*} curvature
+   * @returns
+   * @memberof Road
    */
   getSideToDrawTree(curvature) {
     if (curvature < 0) return 1;
@@ -43,6 +50,13 @@ class Road {
     else return (((generateRandomNO(-1, 2) <= 0) ? 1 : -1.5));
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} currentSegment
+   * @memberof Road
+   */
   drawTrees(ctx, currentSegment) {
     currentSegment.tree.isDrawn = true;
     let sign = currentSegment.tree.sideToDrawTree;
@@ -66,6 +80,16 @@ class Road {
   }
 
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} currentSegmentIndex
+   * @param {*} currentSegment
+   * @param {*} enemiesArr
+   * @param {*} baseSegmentWidth
+   * @memberof Road
+   */
   drawEnemyCars(ctx, currentSegmentIndex, currentSegment, enemiesArr, baseSegmentWidth) {
 
     enemiesArr.map(enemy => {
@@ -97,6 +121,15 @@ class Road {
     });
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} position
+   * @param {*} playerX
+   * @param {*} enemiesArr
+   * @memberof Road
+   */
   drawRoad(ctx, position, playerX, enemiesArr) {
     let baseSegmentIndex = this.findSegmentIndex(position);
     let dx = -this.segments[baseSegmentIndex].curvature, x = 0;
@@ -159,6 +192,19 @@ class Road {
 
   }
 
+  /**
+   *
+   *
+   * @param {*} p
+   * @param {*} cameraX
+   * @param {*} cameraY
+   * @param {*} cameraZ
+   * @param {*} CAMERA_DEPTH
+   * @param {*} CANVAS_WIDTH
+   * @param {*} CANVAS_HEIGHT
+   * @param {*} WIDTH
+   * @memberof Road
+   */
   project(p, cameraX, cameraY, cameraZ, CAMERA_DEPTH, CANVAS_WIDTH, CANVAS_HEIGHT, WIDTH) {
     //translation the world coordinates into camera coordiantes
     p.cameraCoordinates.x = p.worldCoordinates.x - cameraX;
@@ -175,12 +221,41 @@ class Road {
     p.screenCoordinates.w = Math.round((p.screenCoordinates.scale * WIDTH * CANVAS_WIDTH / 2));
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} currentSegment
+   * @param {*} x1
+   * @param {*} y1
+   * @param {*} w1
+   * @param {*} x2
+   * @param {*} y2
+   * @param {*} w2
+   * @memberof Road
+   */
   drawFinishAndStartLines(ctx, currentSegment, x1, y1, w1, x2, y2, w2) {
     if ((currentSegment >= TOTAL_LENGTH_OF_ROAD && currentSegment <= TOTAL_LENGTH_OF_ROAD + 3)
       || ((currentSegment <= 9) && currentSegment >= 7))
       drawPolygon(ctx, x1 - w1, y1, x1 + w1, y1, x2 + w2, y2, x2 - w2, y2, (currentSegment % 2 === 0) ? 'black' : 'white');
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} currentSegment
+   * @param {*} CANVAS_WIDTH
+   * @param {*} LANES
+   * @param {*} x1
+   * @param {*} y1
+   * @param {*} w1
+   * @param {*} x2
+   * @param {*} y2
+   * @param {*} w2
+   * @param {*} color
+   * @memberof Road
+   */
   drawSegment(ctx, currentSegment, CANVAS_WIDTH, LANES, x1, y1, w1, x2, y2, w2, color) {
 
     let r1 = w1 / 10, r2 = w2 / 10,
@@ -213,7 +288,13 @@ class Road {
     }
   }
 
-  //finds the segment depending on the z value provided
+  /**
+   *
+   *
+   * @param {*} z
+   * @returns
+   * @memberof Road
+   */
   findSegmentIndex(z) {
     let segment = this.segments[Math.floor(z / ROAD_PARAM.SEGMENT_LENGTH) % this.segments.length];
     return this.segments.findIndex(x => x === segment);

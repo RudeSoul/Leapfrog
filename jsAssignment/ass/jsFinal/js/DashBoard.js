@@ -1,7 +1,20 @@
+/**
+ *
+ *
+ * @class DashBoard
+ */
 class DashBoard {
   constructor() {
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} isRightPressed
+   * @param {*} isLeftPressed
+   * @memberof DashBoard
+   */
   drawSteering(ctx, isRightPressed, isLeftPressed) {
     let degrees;
 
@@ -26,6 +39,14 @@ class DashBoard {
     ctx.restore();
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} currentSpeed
+   * @param {*} maxSpeed
+   * @memberof DashBoard
+   */
   drawSpeed(ctx, currentSpeed, maxSpeed) {
     const speed = Math.ceil(currentSpeed / maxSpeed * 150);
     const fontSize = 45 * HEIGHT_MULTIPLIER + 65;
@@ -40,7 +61,15 @@ class DashBoard {
     );
   }
 
-  //it draws the ahead and behind enemies and the rank of the player
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} rank
+   * @param {*} aheadEnemyName
+   * @param {*} behindEnemyName
+   * @memberof DashBoard
+   */
   drawRankInfo(ctx, rank, aheadEnemyName, behindEnemyName) {
     const fontSize = 30 * HEIGHT_MULTIPLIER + 30;
     writeText(
@@ -71,6 +100,14 @@ class DashBoard {
     );
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} currentSpeed
+   * @param {*} maxSpeed
+   * @memberof DashBoard
+   */
   drawSpeedNeedle(ctx, currentSpeed, maxSpeed) {
     const colorGradient = makeGradient(ctx, '#41dcf4', '#00b8fe');
     const shadowColor = '#00c6ff';
@@ -88,6 +125,14 @@ class DashBoard {
     );
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} currentSpeed
+   * @param {*} maxSpeed
+   * @memberof DashBoard
+   */
   drawSpeedometer(ctx, currentSpeed, maxSpeed) {
 
     drawImage(
@@ -103,9 +148,16 @@ class DashBoard {
     this.drawSpeedNeedle(ctx, currentSpeed, maxSpeed);
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} baseSegment
+   * @param {*} totalSegments
+   * @memberof DashBoard
+   */
   drawProgressBar(ctx, baseSegment, totalSegments) {
 
-    //drawing the background of the progressBar;
     drawRect(
       ctx,
       700 * WIDTH_MULTIPLIER + 700,

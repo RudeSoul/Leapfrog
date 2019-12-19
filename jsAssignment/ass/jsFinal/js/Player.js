@@ -14,16 +14,34 @@ class Player {
   }
 
   //sign is the -1 or +1 depending on the direction car is curved to 
+  /**
+   *
+   *
+   * @param {*} sign
+   * @memberof Player
+   */
   updateX(sign) {
     this.playerX += (sign * TURNING_SPEED);
   }
 
 
+  /**
+   *
+   *
+   * @param {*} curveValue
+   * @memberof Player
+   */
   updateXInCurve(curveValue) {
     //we only update if there is speed ,if car is in stall  dont update
     if (this.speed > CURVE_POSITION_UPDATE_THRESHOLD) this.playerX -= curveValue * CENTRIFUGAL_FORCE;
   }
 
+  /**
+   *
+   *
+   * @param {*} enemy
+   * @memberof Player
+   */
   handleEnemyCollision(enemy) {
     this.speed = 0;
     enemy.handleCollision();
@@ -34,6 +52,13 @@ class Player {
 
   }
 
+  /**
+   *
+   *
+   * @param {*} currentZ
+   * @param {*} enemiesArr
+   * @memberof Player
+   */
   checkAndHandleEnemyCollision(currentZ, enemiesArr) {
     enemiesArr.map((enemy, index) => {
 
@@ -48,6 +73,13 @@ class Player {
 
 
 
+  /**
+   *
+   *
+   * @param {*} segments
+   * @param {*} baseSegment
+   * @memberof Player
+   */
   checkAndHandleTreeCollision(segments, baseSegment) {
 
     let currentSegment = segments[baseSegment + CAR_TO_BASE_SEGMENT_OFFSET];
@@ -59,6 +91,14 @@ class Player {
 
   }
 
+  /**
+   *
+   *
+   * @param {*} currentZ
+   * @param {*} enemiesArr
+   * @param {*} isGameOver
+   * @memberof Player
+   */
   calculateCurrentPosition(currentZ, enemiesArr, isGameOver) {
     //flag that checks if we found previous and next plaayer
     let found = false;
@@ -86,6 +126,12 @@ class Player {
     }
   }
 
+  /**
+   *
+   *
+   * @param {*} buttonState
+   * @memberof Player
+   */
   updateSpeed(buttonState) {
     //changes the max speed and acceleration depending upon the position on the road
     let currentMaxSpeed, currentAcceleration = ACCELERATION;
@@ -109,6 +155,16 @@ class Player {
 
   }
 
+  /**
+   *
+   *
+   * @param {*} ctx
+   * @param {*} image
+   * @param {*} sprite
+   * @param {*} destX
+   * @param {*} destY
+   * @memberof Player
+   */
   draw(ctx, image, sprite, destX, destY) {
     let spriteSheet = new Image();
     spriteSheet.src = image;
@@ -129,4 +185,5 @@ class Player {
     ctx.shadowOffsetY = 0;
   }
 
-}   
+}
+   

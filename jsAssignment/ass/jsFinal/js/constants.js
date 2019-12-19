@@ -106,14 +106,14 @@ const GAME_IMAGES = [
 
 //creatMap.js constants
 const DEFAULT_RACING_TRACK = [
-  { number: 100, curvature: 100 },
-  { number: 200, curvature: -100 },
+  { number: 100, curvature: 60 },
+  { number: 200, curvature: -60 },
   { number: 300, curvature: 0 },
-  { number: 400, curvature: -100 },
-  { number: 500, curvature: 100 },
+  { number: 400, curvature: -30 },
+  { number: 500, curvature: 30 },
   { number: 600, curvature: 0 },
-  { number: 700, curvature: 100 },
-  { number: 800, curvature: -100 },
+  { number: 700, curvature: 10 },
+  { number: 800, curvature: -10 },
 ];
 const dropDownBtn = document.getElementById("dropDownBtn");
 const roadValues = document.getElementById("roadValues");
@@ -173,9 +173,14 @@ const PLAYER_NAME = [
   'NIRAJ',
   'SULAV',
   'VAXO',
+  'SHRINID',
+  'LIZA',
+  'SAURAV',
+  'MANISH',
+  'RABI',
+  'SUPRIYA',
 ];
 
 //startGame.js constants
 
 //defaultGame.js constants
-

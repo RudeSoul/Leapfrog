@@ -24,6 +24,3 @@ startDefaultGame.addEventListener('click', function () {
   const game = new Game();
   game.start();
 })
-
-
-

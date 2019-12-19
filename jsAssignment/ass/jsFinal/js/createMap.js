@@ -3,13 +3,12 @@ dropDownBtn.style.display = "block";
 roadValues.style.display = "none";
 
 dropDownBtn.addEventListener("click", function (event) {
-
   dropDownBtn.style.display = "none";
   roadValues.style.display = "block";
 });
 
 
-
+//create map according to user
 submitButton.addEventListener("click", function (event) {
   const obj = {};
   const length = parseInt(roadLength.value);
@@ -57,9 +56,4 @@ submitButton.addEventListener("click", function (event) {
     mapSpaceCtx.stroke();
     mapSpaceCtx.fill();
   }
-
-
-
-
 });
-
