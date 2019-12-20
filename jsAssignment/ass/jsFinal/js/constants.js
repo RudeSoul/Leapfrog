@@ -46,11 +46,11 @@ const ENEMY_IMAGES = [
 ];
 
 //Player.js constants
-const MAX_SPEED = 950;
+const MAX_SPEED = 1000;
 const OFF_ROAD_MAX_SPEED = 220;
-const ACCELERATION = 7.5;
+const ACCELERATION = 9.8;
 const BREAKING = -20;
-const DECELERATION = -7;
+const DECELERATION = -6;
 
 const TURNING_SPEED = 0.05;
 const CENTRIFUGAL_FORCE = 0.0007;

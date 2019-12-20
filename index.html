@@ -3,123 +3,177 @@
   <head>
   <title>List Of Assignment</title>
     <style>
-      body {
-        background-color: white;
-      }
-	  a{
-	  text-decoration:none;
-	  color:Black;
-	  }
-	  
-      h1 {
-        font-size: 43px;
-        text-align: center;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      }
-      table,
-      th,
-      td {
-        border: 1px solid;
-        background-color: transparent;
-        padding: 15px;
-      }
-      th {
-        font-size: 200%;
-      }
-      table {
-        width: 100%;
-        border-spacing: 5px;
-        margin-top: 50px;
-        background-color: transparent;
-      }
-      hr {
-        border-top: 2px dashed brown;
-      }
-      .bg-img {
-        background-image: url(logo/logocopy.jpg);
-        /* height: 500px; */
-        background-position: center;
-        background-repeat: no-repeat;
-        /* background-size: 100%; */
-        position: relative;
-      }
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+text-decoration:none;
+color:#0aad8d;
+}
+h1{
+text-align:center;
+font-weight:900;
+color:#fcba03;
+font-size:50px;
+    animation: text-shadow 1.5s ease-in-out infinite;
+
+}
+@keyframes text-shadow {
+    0% {  
+        transform: translateY(0);
+
+    }
+
+    20% {  
+        transform: translateY(-1em);
+    }
+
+    40% {  
+        transform: translateY(0.5em);
+    }
+    
+   60% {
+        transform: translateY(-0.25em);
+    }
+
+    80% {  
+        transform: translateY(0);
+    }
+}
+h1:hover {
+    animation-play-state: paused;
+}
+body {
+  background: #105469;
+  font-family: 'Open Sans', sans-serif;
+}
+table {
+  background: #012B39;
+  border-radius: 0.25em;
+  border-collapse: collapse;
+  margin: 1em;
+}
+th {
+  border-bottom: 1px solid #364043;
+  color: #E2B842;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+td {
+  color: #fff;
+  font-weight: 400;
+  padding: 0.65em 1em;
+}
+.disabled td {
+  color: #4F5F64;
+}
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: #014055;
+}
+
+
     </style>
   </head>
-  <body class="bg-img">
+  <body >
     <h1>Table of Content</h1>
-    <hr />
-    <table>
-      <tr>
-        <th>Title</th>
-        <th>Demo</th>
-        <th>Code</th>
-      </tr>
-	  <tr>
+    
+<table>
+  <thead>
+    <tr>
+      <th>TITLE
+      <th>DEMO
+      <th>CODE
+      <th>STATUS
+  </thead>
+  <tbody>
+    <tr>
         <td>Github Assignment: Hosted Assignments List page Design Assignment</td>
         <td><a href="#">Github Assignment - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog">Github Assignmente - CODE</a></td>
+		<td>Completed</td>
       </tr>
-      <tr>
+      <tr class="disabled">
         <td>Design Assignment 1: 1A-home-search.jpg [static]</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/design1/static/index.html">Design Assignment 1:  1A-home-search.jpg - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/design1/static">Design Assignment 1: 1A-home-search.jpg - CODE</a></td>
-      </tr>
-	   <tr>
+		<td>Not Completed</td>
+	  </tr>
+	   <tr class="disabled">
         <td>Design Assignment 1: 1A-home-search.jpg [Responsive]</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/design1/responsive/index.html">Design Assignment 1:  1A-home-search.jpg - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/design1/responsive">Design Assignment 1: 1A-home-search.jpg - CODE</a></td>
-      </tr>
+		<td>Not Completed</td>
+	  </tr>
 	   <tr>
         <td>Design Assignment 2: 1A-settings.jpg</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/design2/index.html">Design Assignment 2: 1A-settings.jpg - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/design2">Design Assignment 2: 1A-settings.jpg - CODE</a></td>
-      </tr>
+		<td>Completed</td>
+	 </tr>
 	   <tr>
         <td> Design Final Project [Static]</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/FinalDesign/static/index.html"> Design Final Project - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/FinalDesign/static/"> Design Final Project - CODE</a></td>
-      </tr>
+		<td>Completed</td>
+	</tr>
 	  <tr>
         <td> Design Final Project [Responsive]</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/FinalDesign/Responsive/index.html"> Design Final Project - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/FinalDesign/Responsive/"> Design Final Project - CODE</a></td>
-      </tr>
+		<td>Completed</td>
+	 </tr>
 	  
       <tr>
         <td>JS Assignment 1: Image Slider</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/jsAssignment/ass/imageSliderOne/index.html">JS Assignment 1: Image Slider - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/jsAssignment/ass/imageSliderOne">JS Assignment 1: Image Slider - CODE</a></td>
-      </tr>
+		<td>Completed</td>
+		</tr>
       <tr>
         <td>JS Assignment 2:Image Slider with hold times</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/jsAssignment/ass/imageSliderTwo/index.html">JS Assignment 2:Image Slider with hold times - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/jsAssignment/ass/imageSliderTwo">JS Assignment 2:Image Slider with hold times - CODE</a></td>
-      </tr>
+		<td>Completed</td>
+	  </tr>
       <tr>
         <td>JS Assignment 3:Box Collision and Ant Smasher</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/jsAssignment/ass/BoxCollisionAndAntSmasher/index.html">JS Assignment 3:Box Collision and Ant Smasher - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/jsAssignment/ass/BoxCollisionAndAntSmasher">JS Assignment 3:Box Collision and Ant Smasher - CODE</a></td>
-      </tr>
-      <tr>
+		<td>Completed</td>
+	  </tr>
+      <tr class="disabled">
         <td>JS Assignment 4:Car Lane Game with Bullet Implementation</td>
         <td><a href="#">JS Assignment 4:Car Lane Game with Bullet Implementation - DEMO</a></td>
         <td><a href="#">JS Assignment 4:Car Lane Game with Bullet Implementation - CODE</a></td>
-      </tr>
+		<td>Not Completed</td>
+	 </tr>
       <tr>
         <td>JS Assignment 5:Flappy Bird</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/jsAssignment/ass/flappyBird/index.html">JS Assignment 5:Flappy Bird - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/jsAssignment/ass/flappyBird">JS Assignment 5:Flappy Bird - CODE</a></td>
-      </tr>
+		<td>Completed</td>
+	  </tr>
       <tr>
         <td>JS Assignment 6:Helix Animation</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/jsAssignment/ass/hellix/index.html">JS Assignment 6:Helix Animation - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/jsAssignment/ass/hellix">JS Assignment 6:Helix Animation - CODE</a></td>
-      </tr>
+		<td>Completed</td>
+	 </tr>
       <tr>
         <td>JS Assignment 7:Final Project</td>
         <td><a href="https://rudesoul.github.io/Leapfrog/jsAssignment/ass/jsFinal/index.html">JS Assignment 7:Final Project - DEMO</a></td>
         <td><a href="https://github.com/RudeSoul/Leapfrog/tree/master/jsAssignment/ass/jsFinal">JS Assignment 7:Final Project - CODE</a></td>
-      </tr>
-    </table>
-  </body>
+		<td>Completed</td>
+	 </tr>
+  </tbody>
+</table>
 </html>
